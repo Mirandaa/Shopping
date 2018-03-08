@@ -1,0 +1,97 @@
+#upload-main {
+    width: 980px;
+    height: 0px;
+    position: relative;
+    font-size: 12px;
+}
+ol {
+    list-style: none;
+}
+#upload-main .cap {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 98px;
+    left: 300px;
+    width: 550px;
+}
+#uploadForm {
+    height: 830px;
+    position: relative;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 0 10px #d7d7d7;
+    background-color: #fff;
+    position: absolute;
+    width: 550px;
+    top: 10px;
+    left: 220px;
+    color: #818181;
+}
+#upload-main .cap h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    line-height: 40px;
+}
+#upload-main .cap a {
+    position: absolute;
+    color: #818181;
+    left: 173px;
+    top: 27px;
+}
+
+#upload-main a {
+    text-decoration: none;
+}
+#upload-main a:hover {
+    text-decoration: underline;
+}
+#uploadForm ol {
+    padding-top: 20px;
+    padding-left: 93px;
+}
+#uploadForm li {
+    line-height: 30px;
+}
+#uploadForm li input {
+    width: 350px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid #ccd1d5;
+    display: block;
+    border-radius: 5px;
+}
+#uploadForm li textarea {
+    width: 350px;
+    height: 80px;
+    line-height: 20px;
+    border: 1px solid #ccd1d5;
+    display: block;
+    border-radius: 5px;
+}
+#uploadForm input.btn-submit {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 88px;
+    height: 31px;
+    line-height: 31px;
+    cursor: pointer;
+    color: #fff;
+    top: 30px;
+    left: 230px;
+    border: 0;
+    background: url(loginbutton.png) no-repeat 0 0;
+}
+#uploadForm input.btn-submit:hover {
+    background-position: 0 -31px;
+}
+#uploadForm input.btn-submit:active {
+    background-position: 0 -62px;
+}
+.kitjs-validator {
+    color: #BF1623;
+}
