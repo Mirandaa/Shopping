@@ -16,7 +16,7 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-    <title>用户登录</title>
+    <title>登录 - 千寻 - Thousands Find</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="js/kit.js" type="javascript"></script>
     <!--[if IE]>
@@ -37,54 +37,94 @@
             s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <script src="js/dom.js" type="javascript"></script>
-    <script src="js/form.js" type="javascript"></script>
-    <link rel="stylesheet" href="css/css.css" />
+    <%--<script src="js/dom.js" type="javascript"></script>--%>
+    <%--<script src="js/form.js" type="javascript"></script>--%>
     <link rel="stylesheet" href="css/login.css" />
-    <link rel="stylesheet" href="css/validator.css" />
     <!--validator-->
     <script src="js/validator.js" type="javascript"></script>
     <script src="js/autowired.validator.js" type="javascript"></script>
-    <style>
-        table td {
-            font-size: 19px;
-        }
+    <!--background-->
+    <script src="js/particles.js" type="javascript"></script>
+    <script src="js/background.js" type="javascript"></script>
 
-        label {
-            cursor: pointer;
-            margin-right: 1em;
-        }
-    </style>
 </head>
 <body>
+<div id="box"></div>
+<div class="cent-box">
+    <div class="cent-box-header">
+        <h1 class="main-title hide">千寻</h1>
+        <h2 class="sub-title">生活热爱分享 - Thousands Find</h2>
+    </div>
 
-<h1>登录</h1>
-<div id="register-main">
-    <form id="registerForm" action="LoginServlet" method="post">
-        <ol>
-            <li><label for="phoneNum"> </label>
-            <li><label for="phoneNum"> </label>
-            <li><label for="phoneNum">手机号码： <span
-                    class="kitjs-validator" for="@phoneNum"
-                    rules="[{notNull:true, message:'用户名不能为空'}]"></span>
-            </label> <span class="field-validation-valid" data-valmsg-for="phoneNum"
-                           data-valmsg-replace="true"></span> <input id="phoneNum" name="phoneNum"
-                                                                     type="text" value=""></li>
-            <li><label for="phoneNum"> </label>
-            <li><label for="phoneNum"> </label>
-            <li><label for="passwd">密码： <span
-                    class="kitjs-validator" for="@passwd"
-                    rules="[{notNull:true, message:'密码不能为空'},{minLength:'6',message:'密码长度最短为6位'}]"></span>
-            </label> <span class="field-validation-valid" data-valmsg-for="passwd"
-                           data-valmsg-replace="true"></span> <input id="passwd" name="passwd"
-                                                                     type="password"></li>
+    <div class="cont-main clearfix">
+        <div class="index-tab">
+            <div class="index-slide-nav">
+                <a href="jsp/login.jsp" class="active">登录</a>
+                <a href="jsp/register.jsp">注册</a>
+                <div class="slide-bar"></div>
+            </div>
+        </div>
 
-            <li><label><a href="forgetPwd.jsp">忘记密码？</a></label>
-        </ol>
-        <div class="registerError"></div>
-        <input type="submit" value="登录" class="btn-submit"><input type="button" value="注册" class="register-btn-submit" onclick="javascript:window.location.href='jsp/register.jsp';">
+        <form class="login form" action="LoginServlet" method="post">
+            <ol class="group">
+                <div class="group-ipt email">
+                    <span class="field-validation-valid" data-valmsg-for="phoneNum" data-valmsg-replace="true"></span>
+                    <input id="phoneNum" name="phoneNum" type="text" class="ipt" placeholder="手机号码" required value="">
+                </div>
+                <div class="group-ipt password">
+                    <span class="field-validation-valid" data-valmsg-for="passwd" data-valmsg-replace="true"></span>
+                    <input id="password" name="passwd" type="password" class="ipt" placeholder="输入您的登录密码" required>
+                </div>
+                <div class="group-ipt verify">
+                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required>
+                    <img src="http://zrong.me/home/index/imgcode?id=" class="imgcode">
+                </div>
+            </ol>
 
-    </form>
+            <div class="button">
+                <button type="submit" class="login-btn register-btn" id="button">登录</button>
+            </div>
+
+            <div class="remember clearfix">
+                <label class="remember-me">
+                    <span class="icon">
+                        <span class="zt"></span>
+                    </span>
+                    <input type="checkbox" name="remember-me" id="remember-me" class="remember-mecheck" checked>记住我</label>
+                <label class="forgot-password">
+                    <a href="jsp/forgetPwd.jsp">忘记密码？</a>
+                </label>
+            </div>
+        </form>
+    </div>
 </div>
+
+<div class="footer">
+    <p>千寻 - Thousands Find</p>
+    <p>Designed By Maggie | 2018</p>
+</div>
+
+<script>
+    $('.imgcode').hover(function(){
+        layer.tips("看不清？点击更换", '.verify', {
+            time: 6000,
+            tips: [2, "#3c3c3c"]
+        })
+    },function(){
+        layer.closeAll('tips');
+    }).click(function(){
+        $(this).attr('src','http://zrong.me/home/index/imgcode?id=' + Math.random());
+    });
+
+    $("#remember-me").click(function(){
+        var n = document.getElementById("remember-me").checked;
+        if(n) {
+            $(".zt").show();
+        } else {
+            $(".zt").hide();
+        }
+    });
+</script>
+
 </body>
 </html>
