@@ -59,9 +59,9 @@
     <div class="header-top">
         <div class="container">
             <div class="col-sm-4 logo">
-                <a href="index.jsp"><img src="images/logo1.png" alt=""></a>
-            </div>
+                <a href="index.jsp"><img src="images/logo1.png" alt=""></a></div>
             <div class="col-sm-4 world">
+
             </div>
             <div class="col-sm-4 header-left">
                 <p class="log">
@@ -73,7 +73,7 @@
                             out.print("<a href=\"LogoutServlet\" onClick=\"return key()\">"
                                     + "退出" + "</a>");
                         } else {
-                            out.print("<a href=\"jsp/login.jsp\">请登录</a>");
+                            out.print("<a href=\"jsp/login.jsp\">登录</a>");
                             out.print("<a>|</a>");
                             out.print("<a href=\"jsp/register.jsp\">注册</a>");
                         }
@@ -114,7 +114,8 @@
         <div class="head-top">
             <div class="col-sm-8 h_menu4">
                 <ul class="memenu skyblue">
-                    <li class=" grid"><a href="index.jsp">首页</a></li>
+                    <li class="grid"><a href="index.jsp">首页</a></li>
+                    <div class="cutline"></div>
                     <li><a>分类</a>
                         <div class="mepanel">
                             <div class="row">
@@ -141,7 +142,7 @@
                                             %>
                                             <li><a
                                                     href="jsp/goodsDescribed.jsp?gid=<%=goods.getGid()%>"
-                                                    target="_blank"><%=goods.getGname()%></a></li>
+                                                    target="_blank"><%=goods.getGname()%></a></li><br><br>
                                             <%
                                                     }
                                                 }
@@ -156,7 +157,9 @@
                                 %>
                             </div>
                         </div></li>
+                    <div class="cutline"></div>
                     <li><a href="jsp/collection.jsp">收藏</a></li>
+                    <div class="cutline"></div>
                     <li><a href="jsp/myGoods.jsp">我的商品</a></li>
                 </ul>
             </div>

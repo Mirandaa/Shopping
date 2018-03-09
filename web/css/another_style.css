@@ -28,7 +28,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 /*----*/
 .header-top{
     border-bottom: 1px solid #eee;
-    padding: 15px 0;
+    padding: 15px 10px 0 0;
 }
 .header-left ul li{
     display: inline-block;
@@ -60,7 +60,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 .h_nav h4{
     border-bottom:1px solid rgb(236, 236, 236);
     font-size: 1.3em;
-    color:#000;
+    color: #1565c0;
     line-height: 1.8em;
     margin-bottom: 4%;
     text-align: left;
@@ -85,8 +85,9 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .h_nav ul li a:hover{
     color:#0f88eb;
-    text-decoration:underline;
+    text-decoration:none;
 }
+
 /*--banner--*/
 /*--header--*/
 select.in-drop,select.in-drop1 {
@@ -105,8 +106,7 @@ select.in-drop1{
     width:100%;
 }
 .logo{
-    text-align:center;
-    width:auto;
+    text-align: left;
 }
 p.log{
     float:right;
