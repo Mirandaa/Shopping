@@ -16,7 +16,7 @@
 <html>
 <head>
     <base href="<%=basePath%>">
-    <title>找回密码</title>
+    <title>找回密码 - 千寻 - Thousands Find</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="js/kit.js"></script>
     <!--[if IE]>
@@ -46,6 +46,9 @@
     <script src="js/validator.js"></script>
     <script src="js/autowired.validator.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
+    <!--background-->
+    <script src="js/background.js" type="javascript"></script>
+    <script src="js/particles.js" type="javascript"></script>
     <script language="javascript">
         var code;
         function send_mess(){
@@ -105,60 +108,57 @@
             }
         }
     </script>
-    <style>
-        table td {
-            font-size: 19px;
-        }
-
-        label {
-            cursor: pointer;
-            margin-right: 1em;
-        }
-    </style>
 
 </head>
 <!-- body -->
-<body background="images/background.jpg">
+<body>
+<div id="box"></div>
+<div id="cent-box register-box">
+    <div class="cent-box-header">
+        <h1 class="main-title hide">千寻</h1>
+        <h2 class="sub-title">生活热爱分享 - Thousands Find</h2>
+    </div>
 
-<h1>找回密码</h1>
-<div id="regist-main">
-    <form id="registForm" action="EditPwdServlet" method="post">
-        <ol>
-            <li><label for="phoneNum">手机号码： <span
-                    class="kitjs-validator" for="@phoneNum"
-                    rules="[{notNull:true, message:'手机号码不能为空'}]"></span>
-            </label> <span class="field-validation-valid" data-valmsg-for="phoneNum"
-                           data-valmsg-replace="true"></span>
-                <input id="phoneNum" name="phoneNum" type="text" value="">
-                <input id="code_btn" name="code_btn" type="button" value="获取验证码" onclick="send_mess();">
-            </li>
+    <div class="cont-main clearfix">
+        <div class="index-tab">
+            <div class="index-slide-nav">
+                <a href="jsp/forgetPwd.jsp" class="active">找回密码</a>
+                <div class="slide-bar slide-bar1"></div>
+            </div>
+        </div>
 
-            <li><label for="code">验证码： <span
-                    class="kitjs-validator" for="@code"
-                    rules="[{notNull:true, message:'验证码不能为空'}]"></span>
-            </label> <span class="field-validation-valid" data-valmsg-for="code"
-                           data-valmsg-replace="true"></span>
-                <input id="code" name="code" type="text" value=""></li>
+        <form class="login form" action="EditPwdServlet" method="post">
+            <ol class="group">
+                <div class="group-ipt verify">
+                    <span class="field-validation-valid" data-valmsg-for="code" data-valmsg-replace="true"></span>
+                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入手机号" required>
+                    <img src="http://zrong.me/home/index/imgcode?id=" class="imgcode">
+                </div>
 
-            <li><label for="passwd">密码： <span
-                    class="kitjs-validator" for="@passwd"
-                    rules="[{notNull:true, message:'密码不能为空'},{minLength:'6',message:'密码长度最短为6位'}]"></span>
-            </label> <span class="field-validation-valid" data-valmsg-for="passwd"
-                           data-valmsg-replace="true"></span>
-                <input id="passwd" name="passwd" type="password"></li>
+                <div class="group-ipt user">
+                    <span class="field-validation-valid" data-valmsg-for="code" data-valmsg-replace="true"></span>
+                    <input id="code" name="code" type="text" class="ipt" placeholder="输入验证码" value="">
+                </div>
 
-            <li><label for="Confirmpasswd">重新输入密码： <span
-                    class="kitjs-validator" for="@Confirmpasswd"
-                    rules="[{notNull:true, message:'密码不能为空'},{equalWith:'@passwd',message:'密码输入不一致'},{minLength:'6',message:'密码长度最短为6位'}]"></span>
-            </label> <span class="field-validation-valid"
-                           data-valmsg-for="Confirmpasswd" data-valmsg-replace="true"></span>
-                <input id="Confirmpasswd" name="Confirmpasswd" type="password">
-            </li>
+                <li><label for="passwd">密码： <span
+                        class="kitjs-validator" for="@passwd"
+                        rules="[{notNull:true, message:'密码不能为空'},{minLength:'6',message:'密码长度最短为6位'}]"></span>
+                </label> <span class="field-validation-valid" data-valmsg-for="passwd"
+                               data-valmsg-replace="true"></span>
+                    <input id="passwd" name="passwd" type="password"></li>
 
-        </ol>
-        <div class="registError"></div>
-        <input type="submit" value="确认" class="btn-regist" onclick="return checkCode(registForm);">
-    </form>
+                <li><label for="Confirmpasswd">重新输入密码： <span
+                        class="kitjs-validator" for="@Confirmpasswd"
+                        rules="[{notNull:true, message:'密码不能为空'},{equalWith:'@passwd',message:'密码输入不一致'},{minLength:'6',message:'密码长度最短为6位'}]"></span>
+                </label> <span class="field-validation-valid"
+                               data-valmsg-for="Confirmpasswd" data-valmsg-replace="true"></span>
+                    <input id="Confirmpasswd" name="Confirmpasswd" type="password">
+                </li>
+            </ol>
+            <div class="registError"></div>
+            <input type="submit" value="确认" class="btn-regist" onclick="return checkCode(registForm);">
+        </form>
+    </div>
 </div>
 </body>
 </html>

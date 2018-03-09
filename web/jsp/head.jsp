@@ -58,13 +58,10 @@
 <div class="header">
     <div class="header-top">
         <div class="container">
-            <div class="col-sm-4 world">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
             <div class="col-sm-4 logo">
-                <a href="index.jsp"><img src="images/logo.png" alt=""></a>
+                <a href="index.jsp"><img src="images/logo1.png" alt=""></a>
+            </div>
+            <div class="col-sm-4 world">
             </div>
             <div class="col-sm-4 header-left">
                 <p class="log">
@@ -77,37 +74,39 @@
                                     + "退出" + "</a>");
                         } else {
                             out.print("<a href=\"jsp/login.jsp\">请登录</a>");
-                            out.print("<a>or</a>");
+                            out.print("<a>|</a>");
                             out.print("<a href=\"jsp/register.jsp\">注册</a>");
                         }
                     %>
-                    <a id="time"><script type="text/javascript">
-                        showtime();
-                    </script>
+                    <br>
+                    <a id="time">
+                        <script type="text/javascript">
+                            showtime();
+                        </script>
                 </p>
-                <div class="cart box_1">
-                    <form name="form_collection">
-                        <a href="jsp/collection.jsp"> <img src="images/empty_25.png" onmousemove="this.src='images/full_collection_25.png'"
-                                                           onmouseout="this.src='images/empty_25.png'"	alt="" />
+                <%--<div class="cart box_1">--%>
+                    <%--<form name="form_collection">--%>
+                        <%--<a href="jsp/collection.jsp"> <img src="images/empty_25.png" onmousemove="this.src='images/full_collection_25.png'"--%>
+                                                           <%--onmouseout="this.src='images/empty_25.png'"	alt="" />--%>
 
-                        </a>
-                        <!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">
-                            -->
-                    </form>
-                </div>
-                <div>
-                    <br><br>
-                </div>
-                <div class="cart box_1">
-                    <form name="form_collection">
-                        <a href="jsp/upLoad.jsp"> <img src="images/add_red_25.png" onmousemove="this.src='images/add_white_25.png'"
-                                                       onmouseout="this.src='images/add_red_25.png'"	alt="" />
+                        <%--</a>--%>
+                        <%--<!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">--%>
+                            <%---->--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+                <%--<div>--%>
+                    <%--<br><br>--%>
+                <%--</div>--%>
+                <%--<div class="cart box_1">--%>
+                    <%--<form name="form_collection">--%>
+                        <%--<a href="jsp/upLoad.jsp"> <img src="images/add_red_25.png" onmousemove="this.src='images/add_white_25.png'"--%>
+                                                       <%--onmouseout="this.src='images/add_red_25.png'"	alt="" />--%>
 
-                        </a>
-                        <!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">
-                            -->
-                    </form>
-                </div>
+                        <%--</a>--%>
+                        <%--<!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">--%>
+                            <%---->--%>
+                    <%--</form>--%>
+                <%--</div>--%>
             </div>
         </div>
     </div>

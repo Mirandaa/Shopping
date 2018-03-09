@@ -33,7 +33,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>商品详情</title>
+    <title>千寻 - 商品详情</title>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"

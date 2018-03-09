@@ -30,9 +30,6 @@ h1,h2,h3,h4,h5,h6,label,p{
     border-bottom: 1px solid #eee;
     padding: 15px 0;
 }
-.header-left{
-    margin-top: 4px;
-}
 .header-left ul li{
     display: inline-block;
 }
@@ -58,6 +55,7 @@ h1,h2,h3,h4,h5,h6,label,p{
 /* start menu */
 .h_menu4 {
     margin: 7px 0 0px;
+    padding: 0;
 }
 .h_nav h4{
     border-bottom:1px solid rgb(236, 236, 236);
@@ -86,7 +84,7 @@ h1,h2,h3,h4,h5,h6,label,p{
     text-align: left;
 }
 .h_nav ul li a:hover{
-    color:#52d0c4;
+    color:#0f88eb;
     text-decoration:underline;
 }
 /*--banner--*/
@@ -108,21 +106,22 @@ select.in-drop1{
 }
 .logo{
     text-align:center;
+    width:auto;
 }
 p.log{
-    float:left;
+    float:right;
     font-size: 1em;
-    width: 50%;
-    margin-top: 4%;
+    width: 80%;
+    padding: 5% 0;
 }
 p.log a{
-    color:#52d0c4;
+    color:#0f88eb;
     text-decoration:none;
-    margin: 0 5%;
+    margin: 1% 2%;
     display: inline-block;
 }
 p.log a:hover{
-    color:#000;
+    color:#555;
 }
 .search {
     text-align: right;
@@ -295,7 +294,7 @@ ul.callbacks_tabs.callbacks1_tabs {
     font-size: 0.9em;
     display: block;
     float: right;
-    background-color: #52D0C4;
+    background-color: #0f88eb;
     padding: 0.3em 0.6em;
     border-radius: 3px;
     text-decoration: none;
@@ -309,7 +308,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 .col-md1 {
     border: 1px solid #CACACA;
     padding: 1em;
-    border-bottom:5px solid #52D0C4;
+    border-bottom:5px solid #0f88eb;
 }
 .col-md1:hover {
     border: 1px solid #000;
@@ -336,7 +335,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 .top-footer1 h2 {
     font-size: 2em;
-    color: #52d0c4;
+    color: #0f88eb;
     font-family: 'OleoScript-Regular';
     margin: 0 0 0.5em;
 }
@@ -360,7 +359,7 @@ ul.callbacks_tabs.callbacks1_tabs {
     outline: none;
 }
 .top-footer1 input[type="submit"]:hover {
-    background-color:#52d0c4;
+    background-color:#0f88eb;
 }
 .footer {
     border-top: 1px solid #BDBDBD;
@@ -391,7 +390,7 @@ ul.callbacks_tabs.callbacks1_tabs {
     color: #B2B2B2;
 }
 .footer-bottom-cate ul li a:hover{
-    color:#52D0C4;
+    color:#0f88eb;
     padding-left: 5px;
 }
 .cate-bottom ul li  {
@@ -399,7 +398,7 @@ ul.callbacks_tabs.callbacks1_tabs {
     color: #000;
 }
 .cate-bottom ul li.phone {
-    color:#52D0C4;
+    color:#0f88eb;
     padding: 1em 0 0em;
 }
 p.footer-class {
@@ -410,7 +409,7 @@ p.footer-class {
 }
 p.footer-class a{
     text-decoration:none;
-    color: #52D0C4;
+    color: #0f88eb;
 }
 p.footer-class a:hover{
     color:  #B2B2B2;
@@ -444,7 +443,7 @@ p.footer-class a:hover{
     -webkit-appearance:none;
     outline:none;
     color:#fff;
-    outline-color:#52D0C4;
+    outline-color:#0f88eb;
     background: none;
 }
 .contact-bottom-top textarea{
@@ -456,14 +455,14 @@ p.footer-class a:hover{
     color:#bbb;
     min-height:220px;
     resize:none;
-    outline-color:#52D0C4;
+    outline-color:#0f88eb;
     background: none;
 }
 .contact-bottom-top {
     margin: 1em 15px 0;
 }
 .contact-form input[type="submit"]{
-    background: #52D0C4;
+    background: #0f88eb;
     color: #fff;
     border: none;
     outline: none;
@@ -481,7 +480,7 @@ p.footer-class a:hover{
     background: #000;
 }
 .address-grid i{
-    color:#52D0C4;
+    color:#0f88eb;
     font-size:4em;
     float: left;
     margin: 0 9% 0 0;
@@ -502,7 +501,7 @@ p.footer-class a:hover{
     color: #b2b2b2;
 }
 .address1 p a:hover{
-    color: #52D0C4;
+    color: #0f88eb;
 }
 .address-more h2{
     color:#000;
@@ -542,7 +541,7 @@ p.footer-class a:hover{
     width: 95%;
 }
 .acount-btn {
-    background:#52d0c4;
+    background:#0f88eb;
     color: #FFF;
     font-size: 0.9em;
     padding: 0.4em 1em;
@@ -572,14 +571,14 @@ p.footer-class a:hover{
 }
 .login-right input[type="text"] {
     border: 1px solid #bbb;
-    outline-color:#52d0c4;
+    outline-color:#0f88eb;
     width: 96%;
     font-size:0.9em;
     padding:10px;
     margin: 0.5em 0;
 }
 .login-right input[type="submit"] {
-    background:#52d0c4;
+    background:#0f88eb;
     color: #FFF;
     font-size: 0.9em;
     padding: 0.4em 1em;
@@ -615,7 +614,7 @@ a.forgot {
 }
 .register-top-grid input[type="text"], .register-bottom-grid input[type="text"] {
     border: 1px solid #EEE;
-    outline-color:#52D0C4;
+    outline-color:#0f88eb;
     width: 100%;
     font-size: 1em;
     padding: 0.5em;
@@ -691,7 +690,7 @@ a.forgot {
     margin-top:1em;
 }
 .register-but form input[type="submit"] {
-    background:#52D0C4;
+    background:#0f88eb;
     color: #FFF;
     font-size:1em;
     padding: 0.4em 1em;
@@ -725,7 +724,7 @@ a.forgot {
 }
 /*--menu-drop--*/
 h3.cate {
-    color: #52D0C4;
+    color: #0f88eb;
     font-size: 1.5em;
     font-family: 'OleoScript-Regular';
 }
@@ -750,7 +749,7 @@ ul.kid-menu{
 
 }
 .menu-drop > li > a:hover{
-    color:#52D0C4;
+    color:#0f88eb;
 }
 .menu-drop ul li a {
     width: 100%;
@@ -758,7 +757,7 @@ ul.kid-menu{
     position: relative;
     font-size:0.9em;
     margin:0.3em 0;
-    color: #52D0C4;
+    color: #0f88eb;
     text-decoration:none;
     text-indent: 1.2em;
 }
@@ -787,13 +786,13 @@ h6.best2 a{
     text-decoration: none;
 }
 h6.best2 a:hover{
-    color:#52D0C4;
+    color:#0f88eb;
 }
 span.price-in1 {
     font-size: 1.3em;
     padding: 0.3em 0 0;
     display: block;
-    color:#52D0C4;
+    color:#0f88eb;
 }
 .product-go {
     padding: 1em 0;
@@ -822,8 +821,8 @@ span.price-in1 {
 }
 .tags li a:hover {
     color: #fff;
-    background:#52D0C4;
-    border: 1px solid #52D0C4;
+    background:#0f88eb;
+    border: 1px solid #0f88eb;
 }
 
 .tags ul li:nth-child(4),.tags ul li:nth-child(8),.tags ul li:nth-child(12){
@@ -836,7 +835,7 @@ span.price-in1 {
 /*--single--*/
 .single-para h1{
     font-size:1.5em;
-    color:#52D0C4;
+    color:#0f88eb;
     line-height:1.5em;
     font-family: 'OleoScript-Regular';
 }
@@ -853,7 +852,7 @@ label.add-to{
 a.cart{
     padding: 0.3em 0.7em;
     color: #FFF;
-    background: #52D0C4;
+    background: #0f88eb;
     margin: 1.5em 0 0;
     font-size: 1em;
     display:inline-block;
@@ -885,7 +884,7 @@ a.cart:hover{
 .star-on a{
     text-decoration:none;
     font-size:1em;
-    color:#52D0C4;
+    color:#0f88eb;
 }
 .star-on a:hover{
     color:#000;
@@ -900,7 +899,7 @@ a.cart:hover{
     padding: 4em 0;
 }
 .available h6{
-    color:#52D0C4;
+    color:#0f88eb;
     font-size:1.4em;
     padding: 0 0 1em;
 }
@@ -927,7 +926,7 @@ table{
     margin: 0em 0 2em;
 }
 th{
-    color: #52D0C4;
+    color: #0f88eb;
     font-size: 1.2em;
     font-family: 'OleoScript-Regular';
     font-weight: 400;
@@ -948,7 +947,7 @@ a.at-in {
     width: 74%;
 }
 .sed h5{
-    color: #52D0C4;
+    color: #0f88eb;
     font-size: 1.1em;
     font-family: 'OleoScript-Regular';
 }
@@ -983,7 +982,7 @@ a.at-in {
 a.to-buy{
     padding: 0.3em 0.7em;
     color: #FFF;
-    background: #52D0C4;
+    background: #0f88eb;
     margin: 0.5em 0 0;
     font-size: 1em;
     display: inline-block;
@@ -1255,15 +1254,15 @@ ul.nav.nav-pills {
         font-size: 0.85em;
     }
     .header-left {
-        width: 33%;
+        width: 33.33333333%;
         padding: 0;
     }
 
     .logo {
-        width: 41%;
+        width: auto;
     }
     .logo img{
-        width: 80%;
+        width: auto;
         margin: 0 auto;
     }
     .number {

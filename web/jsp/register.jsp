@@ -102,16 +102,6 @@
             }
         }
     </script>
-    <style>
-        table td {
-            font-size: 19px;
-        }
-
-        label {
-            cursor: pointer;
-            margin-right: 1em;
-        }
-    </style>
 
 </head>
 <!-- body -->
