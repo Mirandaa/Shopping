@@ -83,6 +83,7 @@
                         <script type="text/javascript">
                             showtime();
                         </script>
+                    </a>
                 </p>
                 <%--<div class="cart box_1">--%>
                     <%--<form name="form_collection">--%>
