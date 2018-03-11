@@ -134,7 +134,7 @@
           <a
                   href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>"
                   target="_blank"> <%
-            String photoPath = "images/" + goodsList.get(i).getGname()
+            String photoPath = "./images/" + goodsList.get(i).getGname()
                     + "1.jpg";
           %> <img class="img-responsive" src=<%=photoPath%> alt="图片" />
           </a>
