@@ -46,7 +46,6 @@
     <!--background-->
     <script src="js/particles.js" type="javascript"></script>
     <script src="js/background.js" type="javascript"></script>
-
 </head>
 <body>
 <div id="box"></div>
@@ -69,15 +68,11 @@
             <ol class="group">
                 <div class="group-ipt email">
                     <span class="field-validation-valid" data-valmsg-for="phoneNum" data-valmsg-replace="true"></span>
-                    <input id="phoneNum" name="phoneNum" type="text" class="ipt" placeholder="手机号码" required value="">
+                    <input id="phoneNum" name="phoneNum" type="text" class="ipt" placeholder="输入邮箱" required value="">
                 </div>
                 <div class="group-ipt password">
                     <span class="field-validation-valid" data-valmsg-for="passwd" data-valmsg-replace="true"></span>
                     <input id="password" name="passwd" type="password" class="ipt" placeholder="输入您的登录密码" required>
-                </div>
-                <div class="group-ipt verify">
-                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required>
-                    <img src="http://zrong.me/home/index/imgcode?id=" class="imgcode">
                 </div>
             </ol>
 
@@ -105,17 +100,6 @@
 </div>
 
 <script>
-    $('.imgcode').hover(function(){
-        layer.tips("看不清？点击更换", '.verify', {
-            time: 6000,
-            tips: [2, "#3c3c3c"]
-        })
-    },function(){
-        layer.closeAll('tips');
-    }).click(function(){
-        $(this).attr('src','http://zrong.me/home/index/imgcode?id=' + Math.random());
-    });
-
     $("#remember-me").click(function(){
         var n = document.getElementById("remember-me").checked;
         if(n) {

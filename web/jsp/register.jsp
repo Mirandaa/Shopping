@@ -42,66 +42,119 @@
     <script src="js/validator.js"></script>
     <script src="js/autowired.validator.js"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script language="javascript">
-        var code;
-        function send_mess(){
-            $.post('jsp/sms.jsp', {phoneNum:jQuery.trim($('#phoneNum').val())}, function(msg) {
-                code=unescape(msg).substr(unescape(msg).length-8,6);
-                /*  alert(code); */
-                if(msg.indexOf('提交成功')>=0){
-                    RemainTime();
-                }
-                else
-                {
-                    alert("请检查手机号");
-                }
+    <!--手机验证码-->
+    <script type="text/javascript">
+        var InterValObj; //timer变量，控制时间
+        var count = 60; //间隔函数，1秒执行
+        var curCount;//当前剩余秒数
+        var code = ""; //验证码
+        var codeLength = 6;//验证码长度
+        function sendMessage() {
+            curCount = count;
+            var dealType; //验证方式
+            var uid=$("#uid").val();//用户uid
+            if ($("#phone").attr("checked") == true) {
+                dealType = "phone";
+            }
+            else {
+                dealType = "email";
+            }
+//产生验证码
+            for (var i = 0; i < codeLength; i++) {
+                code += parseInt(Math.random() * 9).toString();
+            }
+//设置button效果，开始计时
+            $("#btnSendCode").attr("disabled", "true");
+            document.getElementById('btnSendCode').style.backgroundColor="#d0d0d0";
+            document.getElementById('btnSendCode').style.cursor="no-drop";
+            $("#btnSendCode").val( + curCount + "秒再获取");
+            InterValObj = window.setInterval(SetRemainTime, 1000); //启动计时器，1秒执行一次
+//向后台发送处理数据
+            $.ajax({
+                type: "POST", //用POST方式传输
+                dataType: "text", //数据格式:JSON
+                url: 'Login.ashx', //目标地址
+                data: "dealType=" + dealType +"&uid=" + uid + "&code=" + code,
+                error: function (XMLHttpRequest, textStatus, errorThrown) { },
+                success: function (msg){ }
             });
-        };
-        var iTime=59;
-        var Account;
-        function RemainTime(){
-            document.getElementById('code_btn').disabled = true;
-            var iSecond,sSecond="",sTime="";
-            if (iTime >= 0){
-                iSecond = parseInt(iTime%60);
-                iMinute = parseInt(iTime/60)
-                if (iSecond >= 0){
-                    if(iMinute>0){
-                        sSecond = iMinute + "分" + iSecond + "秒";
-                    }else{
-                        sSecond = iSecond + "秒";
-                    }
-                }
-                sTime=sSecond;
-                if(iTime==0){
-                    clearTimeout(Account);
-                    sTime='获取手机验证码';
-                    iTime = 59;
-                    document.getElementById('code_btn').disabled = false;
-                }else{
-                    Account = setTimeout("RemainTime()",1000);
-                    iTime=iTime-1;
-                }
-            }else{
-                sTime='没有倒计时';
-            }
-            document.getElementById('code_btn').value = sTime;
         }
-        function checkCode(form){
-            if(form.code.value==""){
-                alert("请输入验证码");
-                return false;
+        //timer处理函数
+        function SetRemainTime() {
+            if (curCount == 0) {
+                window.clearInterval(InterValObj);//停止计时器
+                $("#btnSendCode").removeAttr("disabled");//启用按钮
+                document.getElementById('btnSendCode').style.backgroundColor="#fff";
+                document.getElementById('btnSendCode').style.cursor="pointer";
+                $("#btnSendCode").val("重新发送验证码");
+                code = ""; //清除验证码。如果不清除，过时间后，输入收到的验证码依然有效
             }
-            else if(form.code.value!=code){
-                alert("验证码错误,请重试"+form.code.value+"&&&"+code);
-                return false;
-            }
-            else
-            {
-                return true;
+            else {
+                curCount--;
+                $("#btnSendCode").val( + curCount + "秒再获取");
             }
         }
     </script>
+    <%--<script language="javascript">--%>
+        <%--var code;--%>
+        <%--function send_mess(){--%>
+            <%--$.post('jsp/sms.jsp', {phoneNum:jQuery.trim($('#phoneNum').val())}, function(msg) {--%>
+                <%--code=unescape(msg).substr(unescape(msg).length-8,6);--%>
+                <%--/*  alert(code); */--%>
+                <%--if(msg.indexOf('提交成功')>=0){--%>
+                    <%--RemainTime();--%>
+                <%--}--%>
+                <%--else--%>
+                <%--{--%>
+                    <%--alert("请检查手机号");--%>
+                <%--}--%>
+            <%--});--%>
+        <%--};--%>
+        <%--var iTime=59;--%>
+        <%--var Account;--%>
+        <%--function RemainTime(){--%>
+            <%--document.getElementById('code_btn').disabled = true;--%>
+            <%--var iSecond,sSecond="",sTime="";--%>
+            <%--if (iTime >= 0){--%>
+                <%--iSecond = parseInt(iTime%60);--%>
+                <%--iMinute = parseInt(iTime/60)--%>
+                <%--if (iSecond >= 0){--%>
+                    <%--if(iMinute>0){--%>
+                        <%--sSecond = iMinute + "分" + iSecond + "秒";--%>
+                    <%--}else{--%>
+                        <%--sSecond = iSecond + "秒";--%>
+                    <%--}--%>
+                <%--}--%>
+                <%--sTime=sSecond;--%>
+                <%--if(iTime==0){--%>
+                    <%--clearTimeout(Account);--%>
+                    <%--sTime='获取手机验证码';--%>
+                    <%--iTime = 59;--%>
+                    <%--document.getElementById('code_btn').disabled = false;--%>
+                <%--}else{--%>
+                    <%--Account = setTimeout("RemainTime()",1000);--%>
+                    <%--iTime=iTime-1;--%>
+                <%--}--%>
+            <%--}else{--%>
+                <%--sTime='没有倒计时';--%>
+            <%--}--%>
+            <%--document.getElementById('code_btn').value = sTime;--%>
+        <%--}--%>
+        <%--function checkCode(form){--%>
+            <%--if(form.code.value==""){--%>
+                <%--alert("请输入验证码");--%>
+                <%--return false;--%>
+            <%--}--%>
+            <%--else if(form.code.value!=code){--%>
+                <%--alert("验证码错误,请重试"+form.code.value+"&&&"+code);--%>
+                <%--return false;--%>
+            <%--}--%>
+            <%--else--%>
+            <%--{--%>
+                <%--return true;--%>
+            <%--}--%>
+        <%--}--%>
+    <%--</script>--%>
 
 </head>
 <!-- body -->
@@ -126,7 +179,7 @@
             <ol class="group">
                 <div class="group-ipt email">
                     <span class="field-validation-valid" data-valmsg-for="phoneNum" data-valmsg-replace="true"></span>
-                    <input id="email" class="ipt" name="phoneNum" type="text" placeholder="手机号码" required value="">
+                    <input id="email" class="ipt" name="phoneNum" type="text" placeholder="邮箱账号" required value="">
                 </div>
                 <div class="group-ipt user">
                     <span class="field-validation-valid" data-valmsg-for="uname" data-valmsg-replace="true"></span>
@@ -143,7 +196,7 @@
                 <div class="group-ipt verify">
                     <span class="field-validation-valid" data-valmsg-for="code" data-valmsg-replace="true"></span>
                     <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required>
-                    <img src="http://zrong.me/home/index/imgcode?id=" class="imgcode">
+                    <input id="btnSendCode" type="button" value="获取验证码" onClick="sendMessage()" />
                 </div>
             </ol>
         </form>
@@ -160,17 +213,6 @@
 </div>
 
 <script>
-    $('.imgcode').hover(function(){
-        layer.tips("看不清？点击更换", '.verify', {
-            time: 6000,
-            tips: [2, "#3c3c3c"]
-        })
-    },function(){
-        layer.closeAll('tips');
-    }).click(function(){
-        $(this).attr('src','http://zrong.me/home/index/imgcode?id=' + Math.random());
-    })
-
     $(".login-btn").click(function(){
         var email = $("#email").val();
         var password = $("#password").val();

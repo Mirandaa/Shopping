@@ -92,7 +92,7 @@ canvas {
     color: #555;
 }
 .index-tab .index-slide-nav a:hover {
-    color: #0f88eb：
+    color: #0f88eb;
     opacity: 1;
 }
 .index-tab .index-slide-nav a.active {
@@ -139,16 +139,24 @@ canvas {
     color: #666;
     position: relative;
 }
-#password,#verify,#user,#password1 {
+#password,#user,#password1 {
     border-top: 1px solid #e8e8e8;
 }
-.imgcode {
-    width: 95px;
-    position: absolute;
+#verify{
+    border-top: 1px solid #e8e8e8;
+    width: 60%;
+    float: left;
+}
+#btnSendCode {
+    border-top: 1px solid #e8e8e8;
+    text-align: center;
+    float: right;
+    width: 40%;
+    position: relative;
     right: 0;
-    top: 2px;
-    cursor: pointer;
+    border-left: 1px solid #e8e8e8;
     height: 40px;
+    cursor: pointer;
 }
 .button {
     margin-top:18px;
