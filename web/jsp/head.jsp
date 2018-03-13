@@ -85,29 +85,29 @@
                         </script>
                     </a>
                 </p>
-                <%--<div class="cart box_1">--%>
-                    <%--<form name="form_collection">--%>
-                        <%--<a href="jsp/collection.jsp"> <img src="images/empty_25.png" onmousemove="this.src='images/full_collection_25.png'"--%>
-                                                           <%--onmouseout="this.src='images/empty_25.png'"	alt="" />--%>
+                <div class="cart box_1">
+                    <form name="form_collection">
+                        <a href="jsp/collection.jsp"> <img src="images/empty_25.png" onmousemove="this.src='images/full_collection_25.png'"
+                                                           onmouseout="this.src='images/empty_25.png'"	alt="" />
 
-                        <%--</a>--%>
-                        <%--<!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">--%>
-                            <%---->--%>
-                    <%--</form>--%>
-                <%--</div>--%>
-                <%--<div>--%>
-                    <%--<br><br>--%>
-                <%--</div>--%>
-                <%--<div class="cart box_1">--%>
-                    <%--<form name="form_collection">--%>
-                        <%--<a href="jsp/upLoad.jsp"> <img src="images/add_red_25.png" onmousemove="this.src='images/add_white_25.png'"--%>
-                                                       <%--onmouseout="this.src='images/add_red_25.png'"	alt="" />--%>
+                        </a>
+                        <!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">
+                            -->
+                    </form>
+                </div>
+                <div>
+                    <br><br>
+                </div>
+                <div class="cart box_1">
+                    <form name="form_collection">
+                        <a href="jsp/upLoad.jsp"> <img src="images/add_red_25.png" onmousemove="this.src='images/add_white_25.png'"
+                                                       onmouseout="this.src='images/add_red_25.png'"	alt="" />
 
-                        <%--</a>--%>
-                        <%--<!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">--%>
-                            <%---->--%>
-                    <%--</form>--%>
-                <%--</div>--%>
+                        </a>
+                        <!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">
+                            -->
+                    </form>
+                </div>
             </div>
         </div>
     </div>

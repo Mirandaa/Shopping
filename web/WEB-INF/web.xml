@@ -83,4 +83,41 @@
         <servlet-name>CollectServlet</servlet-name>
         <servlet-class>com.shopp.control.CollectServlet</servlet-class>
     </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CollectServlet</servlet-name>
+        <url-pattern>/CollectServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCServlet</servlet-name>
+        <url-pattern>/DeleteCServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteGServlet</servlet-name>
+        <url-pattern>/DeleteGServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditInfoServlet</servlet-name>
+        <url-pattern>/EditInfoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPwdServlet</servlet-name>
+        <url-pattern>/EditPwdServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/UploadServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

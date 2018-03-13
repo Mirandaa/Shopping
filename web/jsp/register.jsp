@@ -199,11 +199,11 @@
                     <input id="btnSendCode" type="button" value="获取验证码" onClick="sendMessage()" />
                 </div>
             </ol>
-        </form>
 
-        <div class="button">
-            <button type="submit" class="login-btn register-btn" id="button" onclick="return checkCode(registerForm);">注册</button>
-        </div>
+            <div class="button">
+                <button type="submit" class="login-btn register-btn" id="button" onclick="return checkCode(registerForm);">注册</button>
+            </div>
+        </form>
     </div>
 </div>
 
