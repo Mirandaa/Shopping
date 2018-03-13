@@ -90,7 +90,6 @@ public class CollectionOperations {
         }
         return false;
     }
-
     /*
      * 从收藏中删除商品
      */
@@ -132,5 +131,4 @@ public class CollectionOperations {
         }
         return scList;
     }
-
 }

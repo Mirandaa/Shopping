@@ -17,20 +17,20 @@ public class LoginFilter implements Filter {
 
     }
 
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response,
-                         FilterChain chain) throws IOException, ServletException {
-        String loginPage = config.getInitParameter("loginPage");
-        HttpSession session = ((HttpServletRequest) request).getSession();
-        String requestPath = ((HttpServletRequest) request).getServletPath();
-        if (session.getAttribute("uname") == null
-                && (requestPath.endsWith("myGoods.jsp")
-                || requestPath.endsWith("collection.jsp")
-                ||  requestPath.endsWith("showMessage.jsp"))) {
-            request.getRequestDispatcher(loginPage).forward(request, response);
-        } else {
-            chain.doFilter(request, response);
-        }
+        @Override
+        public void doFilter(ServletRequest request, ServletResponse response,
+                FilterChain chain) throws IOException, ServletException {
+            String loginPage = config.getInitParameter("loginPage");
+            HttpSession session = ((HttpServletRequest) request).getSession();
+            String requestPath = ((HttpServletRequest) request).getServletPath();
+            if (session.getAttribute("uname") == null
+                    && (requestPath.endsWith("myGoods.jsp")
+                    || requestPath.endsWith("collection.jsp")
+                    ||  requestPath.endsWith("showMessage.jsp"))) {
+                request.getRequestDispatcher(loginPage).forward(request, response);
+            } else {
+                chain.doFilter(request, response);
+            }
     }
 
     @Override

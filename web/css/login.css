@@ -154,7 +154,6 @@ canvas {
     position: relative;
     right: 0;
     border-left: 1px solid #e8e8e8;
-    height: 40px;
     cursor: pointer;
 }
 .button {
