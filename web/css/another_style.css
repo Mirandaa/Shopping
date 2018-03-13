@@ -109,9 +109,8 @@ select.in-drop1{
     text-align: left;
 }
 p.log{
-    float:right;
     font-size: 1em;
-    width: 80%;
+    width: 120%;
     padding: 5% 0;
 }
 p.log a{
@@ -191,8 +190,11 @@ a.item_add {
     display: inline-block;
 }
 .cart.box_1{
+    display: inline-block;
+    padding: 5% 5%;
+    width: auto;
     float: right;
-    margin-top: 2px;
+    vertical-align: middle;
 }
 /*--- slider-css --*/
 .slider {
@@ -1101,7 +1103,8 @@ ul.nav.nav-pills {
         margin-bottom: 2em;
     }
     p.log {
-        width: 55%;
+        width: 120%;
+        position: relative;
         font-size: 0.85em;
     }
     .number span {
@@ -1231,7 +1234,7 @@ ul.nav.nav-pills {
 }
 @media (max-width: 736px){
     p.log {
-        width: 60%;
+        width: 120%;
     }
     .number span {
         font-size: 0.75em;

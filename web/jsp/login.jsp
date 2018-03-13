@@ -18,6 +18,14 @@
     <base href="<%=basePath%>">
     <title>登录 - 千寻 - Thousands Find</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <%--<script src="js/dom.js" type="javascript"></script>--%>
+    <%--<script src="js/form.js" type="javascript"></script>--%>
+    <link rel="stylesheet" href="css/login.css" />
+    <!--validator-->
+    <script src="js/validator.js" type="javascript"></script>
+    <script src="js/autowired.validator.js" type="javascript"></script>
+    <!--background-->
+    <script src="js/background.js" type="javascript"></script>
     <script src="js/kit.js" type="javascript"></script>
     <!--[if IE]>
     <script src="js/ieFix.js"></script>
@@ -37,15 +45,6 @@
             s.parentNode.insertBefore(ga, s);
         })();
     </script>
-    <%--<script src="js/dom.js" type="javascript"></script>--%>
-    <%--<script src="js/form.js" type="javascript"></script>--%>
-    <link rel="stylesheet" href="css/login.css" />
-    <!--validator-->
-    <script src="js/validator.js" type="javascript"></script>
-    <script src="js/autowired.validator.js" type="javascript"></script>
-    <!--background-->
-    <script src="js/particles.js" type="javascript"></script>
-    <script src="js/background.js" type="javascript"></script>
 </head>
 <body>
 <div id="box"></div>
@@ -108,6 +107,26 @@
             $(".zt").hide();
         }
     });
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        //配置
+        var config = {
+            vx: 4,	//小球x轴速度,正为右，负为左
+            vy: 4,	//小球y轴速度
+            height: 2,	//小球高宽，其实为正方形，所以不宜太大
+            width: 2,
+            count: 100,		//点个数
+            color: "121, 162, 185", 	//点颜色
+            stroke: "130,255,255", 		//线条颜色
+            dist: 6000, 	//点吸附距离
+            e_dist: 20000, 	//鼠标吸附加速距离
+            max_conn: 5 	//点到点最大连接数
+        }
+
+        //调用
+        CanvasParticle(config);
+    }
 </script>
 
 </body>

@@ -61,15 +61,19 @@
             <div class="col-sm-4 logo">
                 <a href="index.jsp"><img src="images/logo1.png" alt=""></a></div>
             <div class="col-sm-4 world">
-
             </div>
             <div class="col-sm-4 header-left">
                 <p class="log">
                     <%
                         if (uname != null) {
                             out.print("<a>" + uname + ",欢迎登录" + "</a>");
+                            out.print("<a>|</a>");
                             out.print("<a href=\"jsp/showMessage.jsp\" target=\"_blank\">"
                                     + "个人信息" + "</a>");
+                            out.print("<a>|</a>");
+                            out.print("<a href=\"jsp/collection.jsp\" target=\"_blank\">"
+                                    + "我的收藏" + "</a>");
+                            out.print("<a>|</a>");
                             out.print("<a href=\"LogoutServlet\" onClick=\"return key()\">"
                                     + "退出" + "</a>");
                         } else {
@@ -78,36 +82,21 @@
                             out.print("<a href=\"jsp/register.jsp\">注册</a>");
                         }
                     %>
-                    <br>
-                    <a id="time">
-                        <script type="text/javascript">
-                            showtime();
-                        </script>
-                    </a>
                 </p>
-                <div class="cart box_1">
-                    <form name="form_collection">
-                        <a href="jsp/collection.jsp"> <img src="images/empty_25.png" onmousemove="this.src='images/full_collection_25.png'"
-                                                           onmouseout="this.src='images/empty_25.png'"	alt="" />
-
-                        </a>
-                        <!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">
-                            -->
-                    </form>
-                </div>
-                <div>
-                    <br><br>
-                </div>
-                <div class="cart box_1">
-                    <form name="form_collection">
-                        <a href="jsp/upLoad.jsp"> <img src="images/add_red_25.png" onmousemove="this.src='images/add_white_25.png'"
-                                                       onmouseout="this.src='images/add_red_25.png'"	alt="" />
-
-                        </a>
-                        <!--  		<input type="image" value="" src="images/empty_25.png" onclick="javascript:window.location.href='jsp/shoppingCart.jsp';">
-                            -->
-                    </form>
-                </div>
+                <%--<div class="cart box_1">--%>
+                    <%--<form name="form_collection">--%>
+                        <%--<a href="jsp/collection.jsp"> <img src="images/empty_25.png" onmousemove="this.src='images/full_collection_25.png'"--%>
+                                                           <%--onmouseout="this.src='images/empty_25.png'"	alt="" />--%>
+                        <%--</a>--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+                <%--<div class="cart box_1">--%>
+                    <%--<form name="form_collection">--%>
+                        <%--<a href="jsp/upLoad.jsp"> <img src="images/add_red_25.png" onmousemove="this.src='images/add_white_25.png'"--%>
+                                                       <%--onmouseout="this.src='images/add_red_25.png'"	alt="" />--%>
+                        <%--</a>--%>
+                    <%--</form>--%>
+                <%--</div>--%>
             </div>
         </div>
     </div>
