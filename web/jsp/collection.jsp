@@ -23,10 +23,8 @@
     <title>我的收藏</title>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css"
-          media="all" />
-    <link href="../css/another_style.css" rel="stylesheet" type="text/css"
-          media="all" />
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../css/another_style.css" rel="stylesheet" type="text/css" media="all" />
     <link href="../css/memenu.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript" src="../js/memenu.js"></script>

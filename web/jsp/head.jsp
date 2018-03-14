@@ -68,14 +68,11 @@
                         if (uname != null) {
                             out.print("<a>" + uname + ",欢迎登录" + "</a>");
                             out.print("<a>|</a>");
-                            out.print("<a href=\"jsp/showMessage.jsp\" target=\"_blank\">"
-                                    + "个人信息" + "</a>");
+                            out.print("<a href=\"jsp/showMessage.jsp\" target=\"_blank\">" + "个人信息" + "</a>");
                             out.print("<a>|</a>");
-                            out.print("<a href=\"jsp/collection.jsp\" target=\"_blank\">"
-                                    + "我的收藏" + "</a>");
+                            out.print("<a href=\"jsp/collection.jsp\" target=\"_blank\">" + "我的收藏" + "</a>");
                             out.print("<a>|</a>");
-                            out.print("<a href=\"LogoutServlet\" onClick=\"return key()\">"
-                                    + "退出" + "</a>");
+                            out.print("<a href=\"LogoutServlet\" onClick=\"return key()\">" + "退出" + "</a>");
                         } else {
                             out.print("<a href=\"jsp/login.jsp\">登录</a>");
                             out.print("<a>|</a>");
