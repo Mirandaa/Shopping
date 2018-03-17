@@ -1,6 +1,5 @@
 package com.shopp.control;
 
-import com.shopp.model.SendEmail;
 import com.shopp.model.UserOperations;
 
 import javax.servlet.ServletException;
