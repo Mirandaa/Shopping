@@ -26,7 +26,7 @@ public class LoginServlet extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        String phoneNum = request.getParameter("phoneNum");
+        String phoneNum = request.getParameter("email");
         String passwd = request.getParameter("passwd");
         User user = null;
         String message = "";

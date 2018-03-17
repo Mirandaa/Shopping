@@ -66,8 +66,8 @@
         <form class="login form" action="LoginServlet" method="post">
             <ol class="group">
                 <div class="group-ipt email">
-                    <span class="field-validation-valid" data-valmsg-for="phoneNum" data-valmsg-replace="true"></span>
-                    <input id="phoneNum" name="phoneNum" type="text" class="ipt" placeholder="输入邮箱" required value="">
+                    <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                    <input id="email" name="email" type="text" class="ipt" placeholder="输入邮箱" required value="">
                 </div>
                 <div class="group-ipt password">
                     <span class="field-validation-valid" data-valmsg-for="passwd" data-valmsg-replace="true"></span>
