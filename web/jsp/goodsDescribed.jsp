@@ -42,6 +42,7 @@
           media="all" />
     <link rel="stylesheet" href="css/flexslider.css" type="text/css"
           media="screen" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/imagezoom.js"></script>
     <script type="text/javascript" src="js/memenu.js"></script>
@@ -78,14 +79,6 @@
 
         });
     </script>
-
-
-    <style type="text/css">
-        .heightLimit{
-            height:70px;
-            overflow: auto;
-        }
-    </style>
 </head>
 <body>
 <jsp:include page="head.jsp"></jsp:include>
@@ -118,14 +111,16 @@
                     <p class="heightLimit"><%=described%></p>
                     <div class="star-on">
                         <div class="review">
-                            <a>产地：<%=producer%></a> <br> <a><%=paddress%></a> / <a>运费：<%=carriage%>元
-                        </a> / <a>库存：<%=number%></a>
+                            <a>产地：<strong><%=producer%></strong></a> <br>
+                            <a>商品所在地：<strong><%=paddress%></strong></a> <br>
+                            <a>运费：<strong><%=carriage%></strong>元</a> <br>
+                            <a>库存：<strong><%=number%></strong></a>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <label class="add-to item_price"><%=price%>元</label>
+                    <label class="add-to item_price">￥<%=price%>元</label>
                     <div class="available">
-                        <h6>联系电话：<%=go.getPhoneNumByGid(gid) %></h6>
+                        <h6><i class="fa fa-phone"></i> 联系电话：<%=go.getPhoneNumByGid(gid) %></h6>
                     </div>
                     <a id="carthref" href="CollectServlet?gid=<%=gid%>&buyNumber=1"
                        class="cart item_add" onclick="return editHref()">收藏</a>
