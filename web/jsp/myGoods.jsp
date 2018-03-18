@@ -5,7 +5,8 @@
   Time: 下午7:20
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="com.shopp.model.GoodsOperations"%>
+
+<%--<%@page import="com.shopp.model.GoodsOperations"%>
 <%@page import="com.shopp.bean.Goods"%>
 <%@page import="com.shopp.bean.Collection"%>
 <%@page import="java.util.List"%>
@@ -123,4 +124,6 @@
     </div>
 </div>
 </body>
-</html>
+</html>--%>
+
+<div>我的商品</div>
