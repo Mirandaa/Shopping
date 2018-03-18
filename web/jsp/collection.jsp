@@ -39,7 +39,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="head.jsp"></jsp:include>
+<%--<jsp:include page="head.jsp"></jsp:include>--%>
 <div class="container">
     <div class="check-out">
         <h1>我的收藏</h1>

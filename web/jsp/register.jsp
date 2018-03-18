@@ -153,66 +153,6 @@
         }
 
     </script>
-    <%--<script language="javascript">--%>
-        <%--var code;--%>
- <%--       function send_mess(){
-            $.post('jsp/sms.jsp', {phoneNum:jQuery.trim($('#phoneNum').val())}, function(msg) {
-                code=unescape(msg).substr(unescape(msg).length-8,6);
-                /*  alert(code); */
-                if(msg.indexOf('提交成功')>=0){
-                    RemainTime();
-                }
-                else
-                {
-                    alert("请检查手机号");
-                }
-            });
-        };--%>
-        <%--var iTime=59;--%>
-        <%--var Account;--%>
-        <%--function RemainTime(){--%>
-            <%--document.getElementById('code_btn').disabled = true;--%>
-            <%--var iSecond,sSecond="",sTime="";--%>
-            <%--if (iTime >= 0){--%>
-                <%--iSecond = parseInt(iTime%60);--%>
-                <%--iMinute = parseInt(iTime/60)--%>
-                <%--if (iSecond >= 0){--%>
-                    <%--if(iMinute>0){--%>
-                        <%--sSecond = iMinute + "分" + iSecond + "秒";--%>
-                    <%--}else{--%>
-                        <%--sSecond = iSecond + "秒";--%>
-                    <%--}--%>
-                <%--}--%>
-                <%--sTime=sSecond;--%>
-                <%--if(iTime==0){--%>
-                    <%--clearTimeout(Account);--%>
-                    <%--sTime='获取手机验证码';--%>
-                    <%--iTime = 59;--%>
-                    <%--document.getElementById('code_btn').disabled = false;--%>
-                <%--}else{--%>
-                    <%--Account = setTimeout("RemainTime()",1000);--%>
-                    <%--iTime=iTime-1;--%>
-                <%--}--%>
-            <%--}else{--%>
-                <%--sTime='没有倒计时';--%>
-            <%--}--%>
-            <%--document.getElementById('code_btn').value = sTime;--%>
-        <%--}--%>
-        <%--function checkCode(form){
-            if(form.code.value==""){
-                alert("请输入验证码");
-                return false;
-            }
-            else if(form.code.value!=code){
-                alert("验证码错误,请重试"+form.code.value+"&&&"+code);
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }--%>
-    <%--</script>--%>
 
 </head>
 <!-- body -->
