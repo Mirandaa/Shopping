@@ -726,7 +726,7 @@ a.forgot {
 }
 /*--menu-drop--*/
 h3.cate {
-    color: #0f88eb;
+    color: #555;
     font-size: 1.5em;
     font-family: 'OleoScript-Regular';
 }
@@ -794,7 +794,7 @@ span.price-in1 {
     font-size: 1.3em;
     padding: 0.3em 0 0;
     display: block;
-    color:#0f88eb;
+    color:#cd2426;
 }
 .product-go {
     padding: 1em 0;
@@ -837,14 +837,15 @@ span.price-in1 {
 /*--single--*/
 .single-para h1{
     font-size:1.5em;
-    color:#0f88eb;
+    color:#555;
     line-height:1.5em;
     font-family: 'OleoScript-Regular';
 }
 label.add-to{
     display:block;
     font-size: 2em;
-    color: #000;
+    color: #cd2426;
+    padding: 0 0.5em;
 }
 .single-para p{
     font-size:0.9em;
@@ -855,12 +856,13 @@ a.cart{
     padding: 0.3em 0.7em;
     color: #FFF;
     background: #0f88eb;
-    margin: 1.5em 0 0;
+    margin: 1em 0 0;
     font-size: 1em;
     display:inline-block;
     line-height: 1.6em;
     text-align: center;
     text-decoration:none;
+    width: 100px;
 }
 a.cart:hover{
     background: #000;
@@ -886,7 +888,8 @@ a.cart:hover{
 .star-on a{
     text-decoration:none;
     font-size:1em;
-    color:#0f88eb;
+    color:#555;
+    line-height: 1.5em;
 }
 .star-on a:hover{
     color:#000;
@@ -898,12 +901,11 @@ a.cart:hover{
     border-bottom:1px solid #fa7455	;
 }
 .single {
-    padding: 4em 0;
+    padding: 2em 0;
 }
 .available h6{
-    color:#0f88eb;
-    font-size:1.4em;
-    padding: 0 0 1em;
+    color:#555;
+    font-size:1em;
 }
 .available ul li{
     display:inline-block;
@@ -916,7 +918,7 @@ a.cart:hover{
     padding: 3px;
 }
 .available {
-    padding: 2em 0 1em;
+    padding: 1em 1em;
 }
 
 /*--checkout--*/

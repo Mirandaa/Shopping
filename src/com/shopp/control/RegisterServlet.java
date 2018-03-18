@@ -32,12 +32,12 @@ public class RegisterServlet extends HttpServlet {
         response.setContentType("text/html");
         String uname = request.getParameter("uname");
         String passwd = request.getParameter("passwd");
-        String phone = request.getParameter("phoneNum");
+        String email = request.getParameter("email");
         String path = "jsp/register.jsp";
-        String message = "注册失败，手机号已被使用";
+        String message = "注册失败，邮箱已被使用";
         UserOperations uo=new UserOperations();
         try {
-            if (uo.addUser(uname, passwd, phone)) {
+            if (uo.addUser(uname, passwd, email)) {
                 message = "注册成功";
                 path = "jsp/login.jsp";
             }
