@@ -21,8 +21,8 @@ public class UserOperations {
     /*
      * 注册时添加用户
      */
-    public boolean addUser(String name,String passwd,String phone) {
-        String sql="select * from "+Tools.user_table+" where phoneNum='"+phone+"'";
+    public boolean addUser(String name,String passwd,String email) {
+        String sql="select * from "+Tools.user_table+" where phoneNum='"+email+"'";
         try {
             ps = ct.prepareStatement(sql);
             rs=ps.executeQuery();
@@ -34,7 +34,7 @@ public class UserOperations {
                 sql="insert into users(uname,phoneNum,passwd,lastLogin)value(?,?,?,sysdate());";
                 ps=ct.prepareStatement(sql);
                 ps.setString(1, name);
-                ps.setString(2, phone);
+                ps.setString(2, email);
                 ps.setString(3, Md5.md5Encode(passwd));
                 ps.executeUpdate();
                 ct.close();
@@ -48,13 +48,13 @@ public class UserOperations {
     /*
      * 登陆时检查用户
      */
-    public boolean checkUser(String phone,String passwd) {
-        String sql="select * from "+Tools.user_table+" where phoneNum='"+phone+"' and passwd='"+Md5.md5Encode(passwd)+"';";
+    public boolean checkUser(String email,String passwd) {
+        String sql="select * from "+Tools.user_table+" where phoneNum='"+email+"' and passwd='"+Md5.md5Encode(passwd)+"';";
         try {
             ps = ct.prepareStatement(sql);
             rs=ps.executeQuery();
             if(rs.next()){
-                sql="update "+Tools.user_table+" set lastLogin=sysdate()"+"  where phoneNum='"+phone+"';";
+                sql="update "+Tools.user_table+" set lastLogin=sysdate()"+"  where phoneNum='"+email+"';";
                 ps=ct.prepareStatement(sql);
                 ps.execute();//更新最后登陆时间
                 return true;
@@ -71,10 +71,10 @@ public class UserOperations {
     /*
      * 登陆时验证成功获取用户信息
      */
-    public User getUser(String phoneNum){
+    public User getUser(String email){
         User user=new User();
         try {
-            ps=ct.prepareStatement("select * from "+Tools.user_table+" where phoneNum='"+phoneNum+"';");
+            ps=ct.prepareStatement("select * from "+Tools.user_table+" where phoneNum='"+email+"';");
             ResultSet rs=ps.executeQuery();
             if(rs.next()){
                 user.setUid(rs.getInt(1));

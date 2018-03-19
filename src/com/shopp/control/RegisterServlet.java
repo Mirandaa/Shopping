@@ -20,8 +20,6 @@ public class RegisterServlet extends HttpServlet {
         super();
     }
 
-
-
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         this.doPost(request, response);

@@ -238,3 +238,13 @@ canvas {
     color: #666;
     text-decoration: underline;
 }
+label.error {
+    background:url("../images/unchecked.gif") no-repeat 0px 0px;
+    padding-left: 16px;
+
+    padding-bottom: 2px;
+
+    font-weight: bold;
+
+    color: #EA5200;
+}
