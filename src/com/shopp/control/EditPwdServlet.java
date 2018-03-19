@@ -30,7 +30,7 @@ public class EditPwdServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         String passwd = request.getParameter("passwd");
-        String phone = request.getParameter("phoneNum");
+        String phone = request.getParameter("verify");
         String path = "jsp/forgetPwd.jsp";
         String message = "找回密码失败，该手机号还未注册!";
         UserOperations uo=new UserOperations();

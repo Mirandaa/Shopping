@@ -50,7 +50,6 @@ public class EditInfoServlet extends HttpServlet {
             throws ServletException, IOException {
         this.doPost(request, response);
     }
-
     /**
      * The doPost method of the servlet. <br>
      *
