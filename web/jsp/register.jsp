@@ -45,7 +45,10 @@
         })();
     </script>
     <link rel="stylesheet" href="css/login.css" />
-
+    <!--validator-->
+    <script src="js/validator.js"></script>
+    <script src="js/autowired.validator.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
     <!--手机验证码-->
     <script type="text/javascript">
         var InterValObj; //timer变量，控制时间
@@ -58,6 +61,7 @@
             for (var i = 0; i < codeLength; i++) {
                 code += parseInt(Math.random() * 9).toString();
             }
+
 //设置button效果，开始计时
             curCount = count;
             $("#btnSendCode").attr("disabled", "true");
@@ -104,7 +108,11 @@
         //判断验证码是否正确
        function checkCode(){
             var x = document.forms["regis"]["verify"].value;
-            if(x!=code){
+            if(x==""){
+                alert("请输入验证码");
+                return false;
+            }
+            else if(x!=code){
                 alert("验证码错误,请重试");
                 return false;
             }

@@ -924,6 +924,7 @@ a.cart:hover{
 /*--checkout--*/
 .check-out{
     padding:4em 0em;
+    /*margin-left: -7px;*/
 }
 table{
     width:100%;

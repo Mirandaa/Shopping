@@ -5,7 +5,8 @@
   Time: 下午7:22
   To change this template use File | Settings | File Templates.
 --%>
-<%@page import="com.shopp.model.GoodsOperations"%>
+
+<%--<%@page import="com.shopp.model.GoodsOperations"%>
 <%@page import="com.shopp.bean.Goods"%>
 <%@page import="com.shopp.bean.Collection"%>
 <%@page import="java.util.List"%>
@@ -39,7 +40,7 @@
     </script>
 </head>
 <body>
-<jsp:include page="head.jsp"></jsp:include>
+<%--<jsp:include page="head.jsp"></jsp:include>--%>
 <div class="container">
     <div class="check-out">
         <h1>我的收藏</h1>
@@ -121,4 +122,6 @@
     </div>
 </div>
 </body>
-</html>
+</html>--%>
+
+<div>我的收藏</div>
