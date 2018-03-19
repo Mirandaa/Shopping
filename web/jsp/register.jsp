@@ -19,10 +19,16 @@
     <title>注册 - 千寻 - Thousands Find</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="css/validator.css" />
+
     <script src="js/kit.js"></script>
     <!--[if IE]>
     <script src="js/ieFix.js"></script>
     <![endif]-->
+    <!--validator-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/messages_zh.js"></script>
+
     <script type="text/javascript">
         var _gaq = _gaq || [];
         _gaq.push([ '_setAccount', 'UA-30210234-1' ]);
@@ -39,10 +45,6 @@
         })();
     </script>
     <link rel="stylesheet" href="css/login.css" />
-    <!--validator-->
-    <script src="js/validator.js"></script>
-    <script src="js/autowired.validator.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
     <!--手机验证码-->
     <script type="text/javascript">
         var InterValObj; //timer变量，控制时间
@@ -99,44 +101,8 @@
                 $("#btnSendCode").val( + curCount + "秒再获取");
             }
         }
-        //输入信息的判定
-        function checkCode(){
-            var reg_username = document.forms["regis"]["uname"].value;
-            var reg_email = document.forms["regis"]["email"].value;
-            var reg_pass = document.forms["regis"]["passwd"].value;
-            var reg_repass = document.forms["regis"]["Confirmpasswd"].value;
-            if(reg_username == null || reg_username == "")
-            {
-                $('#user').css('color','red');
-                return false;
-            }else if(reg_email == null || reg_email == ""){
-                $('#email').css('color','red');
-                return false;
-            }
-            var atpos = reg_email.indexOf("@");
-            var dotpos = reg_email.indexOf(".");
-            if(atpos<1 || dotpos<atpos+2 || dotpos+2 >= reg_email.length){
-                alert("请输入有效邮箱地址");
-                return false;
-            }
-            if(reg_pass == null || reg_pass == ""){
-                alert("请输入密码");
-                return false;
-            }
-            if(reg_repass == null || reg_repass == ""){
-                alert("请重新输入密码");
-                return false;
-            }
-            var pass_length = reg_pass.length;
-            if(pass_length < 6){
-                alert("密码位数不少于六");
-                return false;
-            }
-            if(reg_repass!=reg_pass){
-                alert("两次输入密码不同");
-                return false;
-            }
-            //判断验证码是否正确
+        //判断验证码是否正确
+       function checkCode(){
             var x = document.forms["regis"]["verify"].value;
             if(x==""){
                 alert("请输入验证码");
@@ -151,9 +117,111 @@
                 return true;
             }
         }
-
+        // 在键盘按下并释放及提交后验证提交表单
+            $().ready(function() {
+                $("#signupForm").validate({
+                    rules: {
+                        uname: {
+                            required: true
+                        },
+                        passwd: {
+                            required: true,
+                            minlength: 6
+                        },
+                        Confirmpasswd: {
+                            required: true,
+                            minlength: 6,
+                            equalTo: "#password"
+                        },
+                        email: {
+                            required: true,
+                            email: true
+                        }
+                    },
+                    messages: {
+                        uname: {
+                            required: "请输入用户名"
+                        },
+                        passwd: {
+                            required: "请输入密码",
+                            minlength: "密码长度不能小于 6 个字母"
+                        },
+                        Confirmpasswd: {
+                            required: "请输入密码",
+                            minlength: "密码长度不能小于 6 个字母",
+                            equalTo: "两次密码输入不一致"
+                        },
+                        email: "请输入一个正确的邮箱"
+                    }
+                });
+            });
     </script>
-
+    <style>
+        .error{
+            font-size:12px;
+            color:red;
+        }
+    </style>
+    <%--<script language="javascript">--%>
+        <%--var code;--%>
+ <%--       function send_mess(){
+            $.post('jsp/sms.jsp', {phoneNum:jQuery.trim($('#phoneNum').val())}, function(msg) {
+                code=unescape(msg).substr(unescape(msg).length-8,6);
+                /*  alert(code); */
+                if(msg.indexOf('提交成功')>=0){
+                    RemainTime();
+                }
+                else
+                {
+                    alert("请检查手机号");
+                }
+            });
+        };--%>
+        <%--var iTime=59;--%>
+        <%--var Account;--%>
+        <%--function RemainTime(){--%>
+            <%--document.getElementById('code_btn').disabled = true;--%>
+            <%--var iSecond,sSecond="",sTime="";--%>
+            <%--if (iTime >= 0){--%>
+                <%--iSecond = parseInt(iTime%60);--%>
+                <%--iMinute = parseInt(iTime/60)--%>
+                <%--if (iSecond >= 0){--%>
+                    <%--if(iMinute>0){--%>
+                        <%--sSecond = iMinute + "分" + iSecond + "秒";--%>
+                    <%--}else{--%>
+                        <%--sSecond = iSecond + "秒";--%>
+                    <%--}--%>
+                <%--}--%>
+                <%--sTime=sSecond;--%>
+                <%--if(iTime==0){--%>
+                    <%--clearTimeout(Account);--%>
+                    <%--sTime='获取手机验证码';--%>
+                    <%--iTime = 59;--%>
+                    <%--document.getElementById('code_btn').disabled = false;--%>
+                <%--}else{--%>
+                    <%--Account = setTimeout("RemainTime()",1000);--%>
+                    <%--iTime=iTime-1;--%>
+                <%--}--%>
+            <%--}else{--%>
+                <%--sTime='没有倒计时';--%>
+            <%--}--%>
+            <%--document.getElementById('code_btn').value = sTime;--%>
+        <%--}--%>
+        <%--function checkCode(form){
+            if(form.code.value==""){
+                alert("请输入验证码");
+                return false;
+            }
+            else if(form.code.value!=code){
+                alert("验证码错误,请重试"+form.code.value+"&&&"+code);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }--%>
+    <%--</script>--%>
 </head>
 <!-- body -->
 <body>
@@ -173,29 +241,33 @@
             </div>
         </div>
 
-        <form class="login form" action="RegisterServlet" method="post" name = "regis">
+        <form class="login form" action="RegisterServlet" id="signupForm" method="post" name = "regis">
             <ol class="group">
-                <span id="msg"></span>
                 <div class="group-ipt email">
-                    <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                    <p>
+                    <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true" ></span>
                     <input id="email" class="ipt" name="email" type="text" placeholder="邮箱账号" required value="">
-
+                    </p>
                 </div>
                 <div class="group-ipt user">
+                    <p>
                     <span class="field-validation-valid" data-valmsg-for="uname" data-valmsg-replace="true"></span>
                     <input id="user" class="ipt" name="uname" type="text" placeholder="用户名" required value="">
+                    </p>
                 </div>
                 <div class="group-ipt password">
-                    <span class="field-validation-valid" data-valmsg-for="passwd" data-valmsg-replace="true"></span>
+                    <span class="field-validation-valid" data-valmsg-for="password" data-valmsg-replace="true"></span>
                     <input id="password" class="ipt" name="passwd" type="password" placeholder="设置登录密码" required>
                 </div>
                 <div class="group-ipt password1">
+                    <p>
                     <span class="field-validation-valid" data-valmsg-for="Confirmpasswd" data-valmsg-replace="true"></span>
                     <input id="password1" class="ipt" name="Confirmpasswd" type="password" placeholder="重复密码" required>
+                    </p>
                 </div>
                 <div class="group-ipt verify">
                     <span class="field-validation-valid" data-valmsg-for="code" data-valmsg-replace="true"></span>
-                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" required>
+                    <input type="text" name="verify" id="verify" class="ipt" placeholder="输入验证码" >
                     <input id="btnSendCode" type="button" value="获取验证码" onClick="sendMessage()" />
                 </div>
             </ol>

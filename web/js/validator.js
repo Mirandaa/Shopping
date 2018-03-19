@@ -61,11 +61,17 @@ $kit.merge($kit.ui.Validator,
                         if(checkStr.length < rule.maxLength) {
                             return rule.message;
                         }
-                    } else if(rule.isPhoneNum) {
+                    }else if(rule.isEmail){
+                        var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                        if(!reg.test(checkStr)){
+                            return rule.message;
+                        }
+                    }
+                    /*else if(rule.isPhoneNum) {
                         if(!(/^1[3|5|7|8][0-9]\d{8}$/.test(checkStr))) {
                             return rule.message;
                         }
-                    } else if(rule.equalWith) {
+                    }*/ else if(rule.equalWith) {
                         var compareNode = $kit.el(rule.equalWith);
                         if(!$kit.isEmpty(compareNode) && checkStr != $kit.val(compareNode)) {
                             return rule.message;
