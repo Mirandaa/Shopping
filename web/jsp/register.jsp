@@ -45,10 +45,6 @@
         })();
     </script>
     <link rel="stylesheet" href="css/login.css" />
-    <!--validator-->
-    <script src="js/validator.js"></script>
-    <script src="js/autowired.validator.js"></script>
-    <script src="js/jquery-3.2.1.min.js"></script>
     <!--手机验证码-->
     <script type="text/javascript">
         var InterValObj; //timer变量，控制时间
