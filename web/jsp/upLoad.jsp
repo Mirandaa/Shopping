@@ -56,7 +56,7 @@
 <div id="upload-main">
     <form id="uploadForm" action="UploadServlet" enctype="multipart/form-data" method="post">
         <ol>
-            <li><label for="gname"> </label>
+            <li><label for="gname"></label>
 
             <li>
                 <label for="gname">商品名：
@@ -71,16 +71,8 @@
                     <span class="kitjs-validator" for="@number" rules="[{notNull:true, message:'数量不能为空'}]"></span>
                 </label>
                 <span class="field-validation-valid" data-valmsg-for="number" data-valmsg-replace="true"></span>
-                <input id="number" name="number" type="text">
+                <input id="number" name="number" type="number">
             </li>
-
-            <%--<li>--%>
-                <%--<label for="types">类型：--%>
-                    <%--<span class="kitjs-validator" for="@types" rules="[{notNull:true, message:'类型不能为空'}]"></span>--%>
-                <%--</label>--%>
-                <%--<span class="field-validation-valid" data-valmsg-for="types" data-valmsg-replace="true"></span>--%>
-                <%--<input id="types" name="types" type="text">--%>
-            <%--</li>--%>
 
             <li>
                 <label for="types">类型：
@@ -102,7 +94,7 @@
                     <span class="kitjs-validator" for="@price" rules="[{notNull:true, message:'价格不能为空'}]"></span>
                 </label>
                 <span class="field-validation-valid" data-valmsg-for="price" data-valmsg-replace="true"></span>
-                <input id="price" name="price" type="text">
+                <input id="price" name="price" type="number">
             </li>
 
             <li>
@@ -110,7 +102,7 @@
                     <span class="kitjs-validator" for="@carriage" rules="[{notNull:true, message:'运费不能为空'}]"></span>
                 </label>
                 <span class="field-validation-valid" data-valmsg-for="carriage" data-valmsg-replace="true"></span>
-                <input id="carriage" name="carriage" type="text"></li>
+                <input id="carriage" name="carriage" type="number"></li>
 
             <li>
                 <label for="producer">产地：
