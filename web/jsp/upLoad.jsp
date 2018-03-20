@@ -148,27 +148,21 @@
             </span>
 
                 <span class="field-validation-valid" data-valmsg-for="gphoto" data-valmsg-replace="true"></span>
-                <input type="text" name="photo1" id="photo1" readonly
-                       style="margin:0px 5px 0px 0px;width: 285px;line-height: 33px;border: 1px solid #ccd1d5;display:inline;border-radius: 5px;">
-                <input type="button" value="浏览" onclick="path1.click()"
-                       style="width:60px; display:inline;border:1px solid #ccc; ">
+                <input type="text" name="photo1" id="photo1" class="photo1" readonly>
+                <input type="button" value="浏览" onclick="path1.click()" class="scanphoto">
                 <input type="file" id="path1" name=ghpoto1 style="display:none" onchange="photo1.value=this.value">
 
-                <input type="text" name="photo2" id="photo2" readonly
-                       style="margin:5px 5px 5px 0px;width: 285px;line-height: 33px;border: 1px solid #ccd1d5;display:inline;border-radius: 5px;">
-                <input type="button" value="浏览" onclick="path2.click()"
-                       style="width:60px; display:inline;border:1px solid #ccc; ">
+                <input type="text" name="photo2" id="photo2" readonly>
+                <input type="button" value="浏览" onclick="path2.click()" class="scanphoto">
                 <input type="file" id="path2" name=ghpoto2 style="display:none" onchange="photo2.value=this.value">
 
-                <input type="text" name="photo3" id="photo3" readonly
-                       style="margin:5px 5px 5px 0px;width: 285px;line-height: 33px;border: 1px solid #ccd1d5;display:inline;border-radius: 5px;">
-                <input type="button" value="浏览" onclick="path3.click()"
-                       style="width:60px; display:inline;border:1px solid #ccc; ">
+                <input type="text" name="photo3" id="photo3" readonly>
+                <input type="button" value="浏览" onclick="path3.click()" class="scanphoto">
                 <input type="file" id="path3" name=ghpoto3 style="display:none" onchange="photo3.value=this.value">
 
              </ul>
-
-            <input type="submit" value="提交" class="_submit">
+        </ol>
+        <input type="submit" value="提交" class="_submit">
     </form>
 </div>
 </body>

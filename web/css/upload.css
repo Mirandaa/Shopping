@@ -65,11 +65,12 @@
 }
 #uploadForm li textarea {
     width: 350px;
-    height: 80px;
+    height: 100px;
     line-height: 20px;
     border: 1px solid #ccd1d5;
     display: block;
     border-radius: 5px;
+    resize: none;
 }
 #uploadForm input.btn-submit {
     position: relative;
@@ -86,24 +87,28 @@
     background: url(../images/loginbutton.png) no-repeat 0 0;
 }
 
-._submit{
+._submit {
     position: relative;
     display: block;
     overflow: hidden;
-    width: 88px;
     height: 31px;
-    line-height: 31px;
     cursor: pointer;
-    color: #fff;
-    top: 20px;
-    left: 150px;
-
-    border: 0;
-    background: url(../images/loginbutton.png) no-repeat 0 0;
+    top: 10px;
+    margin: 0 auto;
+    border: 2px solid #0f88eb;
+    border-radius: 40px;
+    background: transparent;
+    color: #0f88eb;
+    width: 90px;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
 }
 
 ._submit:hover {
-    background-position: 0 -31px;
+    background-color: #0f88eb;
+    color: #fff;
 }
 
 ._submit:active {
@@ -133,8 +138,30 @@ ol {
     list-style: none;
 }
 
-input{
-    padding-left: 10px;
+#photo1, #photo2, #photo3{
+    margin:0px 5px 10px 0px;
+    width: 285px;
+    line-height: 33px;
+    border: 1px solid #ccd1d5;
+    display:inline;
+    border-radius: 5px;
+}
+
+.scanphoto {
+    width:60px;
+    display:inline;
+    border:1px solid #ccc;
+    color: #818181;
+    height: 30px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, color 0.3s, width 0.3s, border-width 0.3s, border-color 0.3s;
+}
+
+.scanphoto:hover {
+    color: #fff;
+    background-color: #818181;
 }
 
 select{
