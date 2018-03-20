@@ -139,9 +139,7 @@
           %> <img class="img-responsive" src=<%=photoPath%> alt="图片" />
           </a>
           <h3>
-            <a
-                    href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>"
-                    target="_blank"><%=goodsList.get(i).getGname()%></a>
+            <a href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>" target="_blank"><%=goodsList.get(i).getGname()%></a>
           </h3>
           <div class="price">
             <h5 class="item_price"><%=goodsList.get(i).getPrice()%>元

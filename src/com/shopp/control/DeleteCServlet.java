@@ -30,7 +30,8 @@ public class DeleteCServlet extends HttpServlet {
         CollectionOperations co=new CollectionOperations();
         try {
             if (co.deleteGoods(Integer.parseInt(uid), gid, number)) {
-                response.sendRedirect("jsp/collection.jsp");
+               // response.sendRedirect("jsp/collection.jsp");
+                response.sendRedirect("jsp/showMessage.jsp");
             } else {
                 PrintWriter pw=response.getWriter();
                 pw.println("删除失败");

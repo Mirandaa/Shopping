@@ -105,9 +105,7 @@
                 <td><%=price%>元</td>
                 <td><%=goods.getCarriage()%>元</td>
                 <td><%=totalPrice%>元</td>
-                <td><a
-                        href="DeleteCServlet?gid=<%=gid%>&number=<%=number%>"
-                        onclick="return confirmDelete()">删除</a></td>
+                <td><a href="DeleteCServlet?gid=<%=gid%>&number=<%=number%>" onclick="return confirmDelete()">删除</a></td>
             </tr>
             <%
                     }

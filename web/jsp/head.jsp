@@ -70,8 +70,8 @@
                             out.print("<a>|</a>");
                             out.print("<a href=\"jsp/showMessage.jsp\" >" + "个人信息" + "</a>");
                             out.print("<a>|</a>");
-//                            out.print("<a href=\"jsp/collection.jsp\" >" + "我的收藏" + "</a>");
-//                            out.print("<a>|</a>");
+                            out.print("<a href=\"jsp/upLoad.jsp\" >" + "发布商品" + "</a>");
+                            out.print("<a>|</a>");
                             out.print("<a href=\"LogoutServlet\" onClick=\"return key()\">" + "退出" + "</a>");
                         } else {
                             out.print("<a href=\"jsp/login.jsp\">登录</a>");

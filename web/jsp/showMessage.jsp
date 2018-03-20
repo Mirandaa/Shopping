@@ -24,8 +24,8 @@
     <base href="<%=basePath%>">
     <title>个人信息</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link href="../css/message.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/message.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 
     <script src="js/kit.js"></script>
     <!--[if IE]>
