@@ -26,7 +26,7 @@ public class DeleteGServlet extends HttpServlet {
             if (go.deleteGoods(gid)) {
                 CollectionOperations co = new CollectionOperations();
                 co.deleteGoodsByGid(gid);
-                response.sendRedirect("jsp/myGoods.jsp");
+                response.sendRedirect("jsp/showMessage.jsp");
             } else {
                 PrintWriter pw=response.getWriter();
                 pw.println("删除失败");
