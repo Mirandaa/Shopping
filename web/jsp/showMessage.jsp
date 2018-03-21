@@ -80,9 +80,9 @@
 %>
 <div class="inform-background">
     <div class="head-photo">
-        <form id="updateForm" action="EditUImgServlet" enctype="multipart/form-data" method="post">
-            <img id="head-photo" class="head-image" src=<%=imgpath%> alt="静好">
-            <input type="file" value="浏览">
+        <form action="/EditUImgServlet" method="post" enctype="multipart/form-data" >
+            <img id="head-photo" class="head-image" src="<%=imgpath%>">
+            <input type="file" name = "updateimg">
             <input type="submit" value="修改">
         </form>
     </div>
