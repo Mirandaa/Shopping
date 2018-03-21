@@ -100,7 +100,7 @@
         pageCount=rowCount/pageSize+1;
       }
     %>
-
+    <h3 class="news">最新商品</h3>
     <div class="content-top">
       <%
         if(null==request.getParameter("flag"))
@@ -120,6 +120,7 @@
       %>
       <div class="clearfix"></div>
     </div>
+
     <%
         break;
       }

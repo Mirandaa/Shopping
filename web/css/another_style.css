@@ -270,6 +270,10 @@ ul.callbacks_tabs.callbacks1_tabs {
     text-align: center;
     margin: 0 0 1em;
 }
+.container .news {
+    color: #0f88eb;
+    padding-top: 1.5em;
+}
 .col-md1 img{
     margin: 0 auto;
 }
@@ -278,16 +282,16 @@ ul.callbacks_tabs.callbacks1_tabs {
     line-height: 1.1em;
     font-family: 'OleoScript-Regular';
     text-align: center;
-    margin: 0 0 0.7em;
-    color: #000;
+    margin: 0.7em 0 0.7em 0;
+    color: #555;
 }
 .col-md1 h3 a{
-    color: #000;
+    color: #555;
     text-decoration: none;
 }
 .price h5{
     float: left;
-    color:#000;
+    color: #cd2426;
     font-size: 1.5em;
     margin-top: 3px;
 }
@@ -297,12 +301,11 @@ ul.callbacks_tabs.callbacks1_tabs {
     display: block;
     float: right;
     background-color: #0f88eb;
-    padding: 0.3em 0.6em;
-    border-radius: 3px;
+    padding: 0.3em 1em;
     text-decoration: none;
 }
 .content-top {
-    padding: 4em 0;
+    padding: 0 0;
 }
 .content-top1 {
     padding: 2em 0;
@@ -313,8 +316,8 @@ ul.callbacks_tabs.callbacks1_tabs {
     border-bottom:5px solid #0f88eb;
 }
 .col-md1:hover {
-    border: 1px solid #000;
-    border-bottom: 5px solid #000;
+    border: 1px solid #555;
+    border-bottom: 5px solid #555;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;
@@ -322,7 +325,7 @@ ul.callbacks_tabs.callbacks1_tabs {
     -ms-transition: 0.5s all;
 }
 .col-md1:hover .price a {
-    background-color: #000;
+    background-color: #555;
     transition: 0.5s all;
     -webkit-transition: 0.5s all;
     -o-transition: 0.5s all;

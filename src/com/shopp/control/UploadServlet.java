@@ -33,7 +33,7 @@ public class UploadServlet extends HttpServlet {
         int i = 0;
         String[] attr = new String[11];
         //String path = "D:\\IDE\\tomcat8\\webapps\\shopp\\images\\";
-        String path ="D:\\IdeaProjects\\Shopping\\web\\images\\";
+        String path ="/Users/mac/IdeaProjects/Shopping/web/images";
         int uid=0;
 
         //1、创建一个DiskFileItemFactory工厂
