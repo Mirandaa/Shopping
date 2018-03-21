@@ -259,4 +259,38 @@ public class GoodsOperations {
         rs.close();
         return phoneNum;
     }
+/*
+*根据关键字查询商品
+ */
+    public List<Goods> getGoodsListByKeyValue(String value,int order) throws Exception {
+        List<Goods> glist=new ArrayList<Goods>();
+        Goods goods=null;
+        if(order == 0){
+            ps=ct.prepareStatement("select * from "+Tools.goods_table+" where described LIKE '%"+value+"%' order by pdate ;");
+        }else{
+            ps=ct.prepareStatement("select * from "+Tools.goods_table+" where described LIKE '%"+value+"%' order by price ;");
+        }
+        rs=ps.executeQuery();
+        while(rs.next()){
+            int gid = rs.getInt("gid");
+            String gname = rs.getString("gname");
+            int number = rs.getInt("number");
+            String photo = rs.getString("gphoto");
+            String type = rs.getString("types");
+            String producer = rs.getString("producer");
+            float price = rs.getFloat("price");
+            float carriage = rs.getFloat("carriage");
+            String pdate = rs.getDate("pdate").toString();
+            String paddress = rs.getString("paddress");
+            String described = rs.getString("described");
+            String udate=rs.getString("udate");
+            int uid=rs.getInt("uid");
+            goods = new Goods(gname, number, photo, type, producer, price,
+                    carriage, pdate, paddress, described,uid,udate);
+            goods.setGid(gid);
+            goods.setUid(uid);
+            glist.add(goods);
+        }
+        return glist;
+    }
 }

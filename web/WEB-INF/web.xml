@@ -87,7 +87,14 @@
         <servlet-name>CollectServlet</servlet-name>
         <servlet-class>com.shopp.control.CollectServlet</servlet-class>
     </servlet>
-
+    <servlet>
+        <servlet-name>QueryServlet</servlet-name>
+        <servlet-class>com.shopp.control.QueryServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>QueryServlet</servlet-name>
+        <url-pattern>/QueryServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditUImgServlet</servlet-name>
         <url-pattern>/EditUImgServlet</url-pattern>

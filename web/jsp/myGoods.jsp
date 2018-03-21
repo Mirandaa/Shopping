@@ -21,7 +21,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>我的商品</title>
+    <title>搜索</title>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css"

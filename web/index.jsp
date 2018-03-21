@@ -52,6 +52,9 @@
 </head>
 <body>
 <jsp:include page="jsp/head.jsp"></jsp:include>
+<script type="text/javascript">
+    var value = document.forms["query"]["find_value"].value;
+</script>
 <div class="banner">
   <div class="col-sm-3 banner-mat">
     <img class="img-responsive" src="images/ba1.jpg" alt="">
@@ -168,7 +171,7 @@
   .div{ margin:0 auto; width:400px; height:100px;}
   /* css注释：为了观察效果设置宽度 边框 高度等样式 */
 </style>
-<div class="div">
+<div class="div"></div>
 
     <%//上一页
 if(pageNow!=1){

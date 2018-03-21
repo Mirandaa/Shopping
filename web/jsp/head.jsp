@@ -61,7 +61,7 @@
             <div class="col-sm-4 logo">
                 <a href="index.jsp"><img src="images/logo1.png" alt=""></a></div>
             <div class="col-sm-4 world">
-                <form action="QueryServlet" method="post">
+                <form action="/jsp/findResult.jsp" method="post" name="query">
                     <input type="text" name="find_value" id="find_value">
                     <input type="submit" value="查询">
                 </form>
