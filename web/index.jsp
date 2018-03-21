@@ -48,9 +48,7 @@
       }
   </script>
   <script language="javascript">
-
   </script>
-
 </head>
 <body>
 <jsp:include page="jsp/head.jsp"></jsp:include>
@@ -146,8 +144,7 @@
           <div class="price">
             <h5 class="item_price"><%=goodsList.get(i).getPrice()%>元
             </h5>
-            <a
-                    href="CollectServlet?gid=<%=goodsList.get(i).getGid()%>&buyNumber=1"
+            <a  href="CollectServlet?gid=<%=goodsList.get(i).getGid()%>&buyNumber=1"
                     class="item_add" onclick="checkSuccess()">收藏</a>
             <div class="clearfix"></div>
           </div>

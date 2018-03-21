@@ -104,7 +104,9 @@ public class UserOperations {
         }
         return false;
     }
-
+    /*
+     * 修改用户名
+     */
     public boolean editUname(int uid, String uname) throws Exception {
         String sql = "update "+Tools.user_table+" set uname=? where uid='" + uid+"'";
         int result = 0;
@@ -117,7 +119,9 @@ public class UserOperations {
         }
         return false;
     }
-
+    /*
+     * 通过邮箱查询
+     */
     public User queryByPhoneNum(String phoneNum) throws Exception {
         User user = null;
         ResultSet rs = null;
@@ -142,7 +146,9 @@ public class UserOperations {
         rs.close();
         return user;
     }
-
+    /*
+     * 通过id查询
+     */
     public User queryByUid(String uid) throws Exception {
         User user = null;
         ResultSet rs = null;
@@ -162,6 +168,8 @@ public class UserOperations {
             String date = rs.getDate("lastlogin").toString();
             String time = rs.getTime("lastlogin").toString();
             user.setLastLogin(date + "　" + time);
+            String uimg = rs.getString("uimg");
+            user.setUimg(uimg);
         }
         ps.close();
         rs.close();
@@ -175,6 +183,21 @@ public class UserOperations {
         int result = 0;
         ps = this.ct.prepareStatement(sql);
         ps.setString(1, Md5.md5Encode(passwd));
+        result = ps.executeUpdate();
+        ps.close();
+        if (result == 1) {
+            return true;
+        }
+        return false;
+    }
+    /*
+     * 修改头像
+     */
+    public boolean updateimg(int uid, String newName) throws Exception {
+        String sql = "update "+Tools.user_table+" set uimg=? where uid='" + uid+"'";
+        int result = 0;
+        ps = this.ct.prepareStatement(sql);
+        ps.setString(1, newName);
         result = ps.executeUpdate();
         ps.close();
         if (result == 1) {

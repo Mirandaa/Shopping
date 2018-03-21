@@ -61,6 +61,10 @@
             <div class="col-sm-4 logo">
                 <a href="index.jsp"><img src="images/logo1.png" alt=""></a></div>
             <div class="col-sm-4 world">
+                <form action="QueryServlet" method="post">
+                    <input type="text" name="find_value" id="find_value">
+                    <input type="submit" value="查询">
+                </form>
             </div>
             <div class="col-sm-4 header-left">
                 <p class="log">
@@ -70,8 +74,8 @@
                             out.print("<a>|</a>");
                             out.print("<a href=\"jsp/showMessage.jsp\" >" + "个人信息" + "</a>");
                             out.print("<a>|</a>");
-//                            out.print("<a href=\"jsp/collection.jsp\" >" + "我的收藏" + "</a>");
-//                            out.print("<a>|</a>");
+                            out.print("<a href=\"jsp/upLoad.jsp\" >" + "发布商品" + "</a>");
+                            out.print("<a>|</a>");
                             out.print("<a href=\"LogoutServlet\" onClick=\"return key()\">" + "退出" + "</a>");
                         } else {
                             out.print("<a href=\"jsp/login.jsp\">登录</a>");
