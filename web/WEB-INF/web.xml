@@ -72,6 +72,10 @@
         <servlet-class>com.shopp.control.EditInfoServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>EditUImgServlet</servlet-name>
+        <servlet-class>com.shopp.control.EditUImgServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DeleteGServlet</servlet-name>
         <servlet-class>com.shopp.control.DeleteGServlet</servlet-class>
     </servlet>
@@ -84,6 +88,10 @@
         <servlet-class>com.shopp.control.CollectServlet</servlet-class>
     </servlet>
 
+    <servlet-mapping>
+        <servlet-name>EditUImgServlet</servlet-name>
+        <url-pattern>/EditUImgServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CollectServlet</servlet-name>
         <url-pattern>/CollectServlet</url-pattern>

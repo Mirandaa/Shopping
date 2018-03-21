@@ -15,6 +15,16 @@ public class User {
     private String phoneNum;
     // 最后登录时间
     private String lastLogin;
+    //用户头像
+    private String uimg;
+
+    public String getUimg() {
+        return uimg;
+    }
+
+    public void setUimg(String uimg) {
+        this.uimg = uimg;
+    }
 
     public int getUid() {
         return uid;
