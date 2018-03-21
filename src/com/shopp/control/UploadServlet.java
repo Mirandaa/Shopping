@@ -60,7 +60,6 @@ public class UploadServlet extends HttpServlet {
                     InputStream in = item.getInputStream();
                     byte[] buffer = new byte[1024];
                     int len = 0;
-
                     String[] name = fileName.split("\\\\");
                     fileName = path + name[name.length-1];//文件最终上传的位置
                     OutputStream out = new FileOutputStream(fileName);
@@ -68,7 +67,6 @@ public class UploadServlet extends HttpServlet {
                     while ((len = in.read(buffer)) != -1) {
                         out.write(buffer, 0, len);
                     }
-
                     out.close();
                     in.close();
 

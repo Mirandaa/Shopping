@@ -73,13 +73,18 @@
 <%
     UserOperations uo = new UserOperations();
     User user = uo.queryByUid(uid);
+    String imgpath="images/duimg.jpg";
     if (user != null) {
-
+        imgpath="images/"+user.getUimg();
     }
 %>
 <div class="inform-background">
     <div class="head-photo">
-        <img id="head-photo" class="head-image" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2004010330,3706086301&fm=27&gp=0.jpg" alt="静好">
+        <form id="updateForm" action="EditUImgServlet" enctype="multipart/form-data" method="post">
+            <img id="head-photo" class="head-image" src=<%=imgpath%> alt="静好">
+            <input type="file" value="浏览">
+            <input type="submit" value="修改">
+        </form>
     </div>
     <h1 class="profile-title">
         <span class="field-validation-valid" data-valmsg-for="username" data-valmsg-replace="true"></span>

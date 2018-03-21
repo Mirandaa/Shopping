@@ -56,7 +56,7 @@ public class EditUImgServlet extends HttpServlet {
 
                     UserOperations uo = new UserOperations();
                     if (uo.updateimg(uid, name[name.length-1])) {
-                        response.sendRedirect("/jsp"+"/" + "showMessage.jsp");
+                        response.sendRedirect("/jsp"+"/"+"showMessage.jsp");
                         return;
                     }
                 }
