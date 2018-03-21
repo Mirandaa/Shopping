@@ -276,6 +276,10 @@ ul.callbacks_tabs.callbacks1_tabs {
 }
 .col-md1 img{
     margin: 0 auto;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    max-height: 265px;
 }
 .col-md1 h3 {
     font-size: 1.2em;
