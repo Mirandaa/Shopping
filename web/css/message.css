@@ -114,7 +114,7 @@ body{
     border-radius: 10px;
 }
 
-input{
+.main input{
     width:90px;
     height:40px;
     border:none;
@@ -122,4 +122,26 @@ input{
     line-height: 40px;
     background: none;
     color:white;
+}
+
+.head-photo input{
+    width:90px;
+    height:40px;
+    border:none;
+    border-radius: 5px;
+    line-height: 40px;
+    background: none;
+    color:white;
+}
+
+#change{
+    opacity:0;
+    filter: alpha(opacity=0);
+    position: absolute;
+    margin-top:-100px;
+}
+
+#change input{
+    width: 100px;
+    height: 100px;
 }

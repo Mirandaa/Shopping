@@ -132,3 +132,22 @@ ul.memenu.skyblue {text-align: center;}
         display: none;
     }
 }
+#find_value{
+    width:250px;
+    height: 30px;
+    border:1px solid #CACACA;
+    border-radius:5px;
+    padding-left: 10px;
+}
+
+#search{
+    margin-left:-52px;
+    opacity:0;
+    filter: alpha(opacity=0);
+}
+
+.searchImg{
+    width:25px;
+    height:auto;
+    margin-left:-38px;
+}

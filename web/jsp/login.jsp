@@ -70,8 +70,8 @@
                     <input id="email" name="email" type="text" class="ipt" placeholder="输入邮箱" required value="">
                 </div>
                 <div class="group-ipt password">
-                    <span class="field-validation-valid" data-valmsg-for="passwd" data-valmsg-replace="true"></span>
-                    <input id="password" name="passwd" type="password" class="ipt" placeholder="输入您的登录密码" required>
+                    <%--<span class="field-validation-valid" data-valmsg-for="passwd" data-valmsg-replace="true"></span>--%>
+                    <input id="password" name="passwd" type="password" class="ipt" placeholder="输入您的登录密码" >
                 </div>
             </ol>
 

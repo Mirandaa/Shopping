@@ -63,7 +63,8 @@
             <div class="col-sm-4 world">
                 <form action="/jsp/findResult.jsp" method="post" name="query">
                     <input type="text" name="find_value" id="find_value">
-                    <input type="submit" value="查询">
+                    <img src="../images/search.png" class="searchImg">
+                    <input type="submit" value="查询" id="search">
                 </form>
             </div>
             <div class="col-sm-4 header-left">

@@ -32,7 +32,7 @@ public class UploadServlet extends HttpServlet {
         int p = 0;
         int i = 0;
         String[] attr = new String[11];
-        String path = "G:\\个人\\IDEA_workspace\\Shopping\\web\\images\\";
+        String path = "D:\\IdeaProjects\\Shopping\\web\\images\\";
         int uid=0;
 
         //1、创建一个DiskFileItemFactory工厂

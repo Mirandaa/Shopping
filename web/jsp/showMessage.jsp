@@ -49,6 +49,7 @@
     <script src="js/dom.js"></script>
     <script src="js/form.js"></script>
     <script src="js/jquery.min.js"></script>
+    <script src="../js/jquery-1.9.1.js"></script>
     <script src="js/jump.js"></script>
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/login.css" />
@@ -82,8 +83,8 @@
     <div class="head-photo">
         <form action="/EditUImgServlet" method="post" enctype="multipart/form-data" >
             <img id="head-photo" class="head-image" src="<%=imgpath%>">
-            <input type="file" name = "updateimg">
-            <input type="submit" value="修改">
+            <div id="change"><input type="file" name = "updateimg" class="upload-file"/></div>
+            <%--<input type="submit" value="修改">--%>
         </form>
     </div>
     <h1 class="profile-title">

@@ -22,18 +22,23 @@
     <title>查询</title>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css"
-          media="all" />
-    <link href="css/another_style.css" rel="stylesheet" type="text/css"
-          media="all" />
-    <link href="css/popuo-box.css" rel="stylesheet" type="text/css"
-          media="all" />
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/another_style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/order.css" rel="stylesheet" type="text/css" media="all" />
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/responsiveslides.min.js"></script>
+    <script type="text/javascript" src="../js/selected.js"></script>
 </head>
 <body>
     <jsp:include page="head.jsp"></jsp:include>
     <div class="content">
+        <div class="orderBy" id="orderBy">
+            <ol>
+                <ul>按价格</ul>
+                <ul>按运费</ul>
+            </ol>
+        </div>
         <div class="container">
             <div style="visibility: hidden;" id="orderdiv"></div>
             <%		//定义四个分页会用到的变量
