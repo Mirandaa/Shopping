@@ -266,9 +266,9 @@ public class GoodsOperations {
         List<Goods> glist=new ArrayList<Goods>();
         Goods goods=null;
         if(order == 0){
-            ps=ct.prepareStatement("select * from "+Tools.goods_table+" where described LIKE '%"+value+"%' order by pdate ;");
+            ps=ct.prepareStatement("select * from "+Tools.goods_table+" where described LIKE '%"+value+"%'or types LIKE '%\"+value+\"%' or gname LIKE '%\"+value+\"%' order by pdate ;");
         }else{
-            ps=ct.prepareStatement("select * from "+Tools.goods_table+" where described LIKE '%"+value+"%' order by price ;");
+            ps=ct.prepareStatement("select * from "+Tools.goods_table+" where described LIKE '%"+value+"%' or types LIKE '%\"+value+\"%' or gname LIKE '%\"+value+\"%' order by price ;");
         }
         rs=ps.executeQuery();
         while(rs.next()){
