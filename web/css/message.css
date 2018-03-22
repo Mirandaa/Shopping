@@ -4,7 +4,7 @@ body{
 
 .inform-background{
     height:315px;
-    padding-top: 90px;
+    padding-top: 70px;
     background: url(https://y.gtimg.cn/mediastyle/yqq/img/bg_profile.jpg) 50% no-repeat;
     background-size: cover;
     text-align: center;
@@ -21,21 +21,67 @@ body{
 .head-image{
     display: block;
     width: 100%;
-    height: 100%;
     border: 4px solid #fff;
     border-radius: 99px;
     background: #fff;
     image-rendering: optimizeQuality;
+    margin-bottom: 10px;
+}
+
+.upbutton {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.upload{
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.5);
+    text-decoration: none;
+    color: rgb(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.upload:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
+.upload input.updateimg{
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upbutton .submit{
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    color: rgb(255, 255, 255, 0.5);
+    padding: 0 0;
+    height: 30px;
+    margin-left: 10px;
+    width: 50px;
+    -moz-transition: 0.5s all;
+}
+
+.upbutton .submit:hover{
+    color: #fff;
 }
 
 .profile-title{
     font-size: 0;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 40px;
 }
 
 .name{
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 400;
     line-height: 50px;
     margin-right: 4px;

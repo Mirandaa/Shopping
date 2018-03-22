@@ -73,7 +73,7 @@
 <%
     UserOperations uo = new UserOperations();
     User user = uo.queryByUid(uid);
-    String imgpath="images/duimg.jpg";
+    String imgpath="images/1.jpg";
     if (user != null) {
         imgpath="images/"+user.getUimg();
     }
@@ -82,8 +82,12 @@
     <div class="head-photo">
         <form action="/EditUImgServlet" method="post" enctype="multipart/form-data" >
             <img id="head-photo" class="head-image" src="<%=imgpath%>">
-            <input type="file" name = "updateimg">
-            <input type="submit" value="修改">
+            <div class="upbutton">
+                <a href="javascript:;" class="upload">修改头像
+                    <input class="updateimg" type="file" name="updateimg" multiple="multiple">
+                </a>
+                <input class="submit" type="submit" value="提交">
+            </div>
         </form>
     </div>
     <h1 class="profile-title">
