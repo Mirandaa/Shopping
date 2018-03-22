@@ -133,17 +133,26 @@ ul.memenu.skyblue {text-align: center;}
     }
 }
 #find_value{
-    width:250px;
+    width: 100%;
     height: 30px;
     border:1px solid #CACACA;
     border-radius:5px;
     padding-left: 10px;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -ms-transition: all .3s;
+    -o-transition: all .3s;
+}
+
+#find_value:hover{
+    border:1px solid #0f88eb;
 }
 
 #search{
     margin-left:-52px;
     opacity:0;
     filter: alpha(opacity=0);
+    position: absolute;
 }
 
 .searchImg{

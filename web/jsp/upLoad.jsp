@@ -34,12 +34,16 @@
     <link rel="stylesheet" href="css/css.css"/>
     <link rel="stylesheet" href="css/upload.css"/>
     <link rel="stylesheet" href="css/validator.css"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <!--validator-->
     <script src="js/validator.js"></script>
     <script src="js/autowired.validator.js"></script>
 </head>
-
 <body>
+<a class="return-link" href="index.jsp">
+    <i class="fa fa-reply return" aria-hidden="true"></i>
+    返回主页
+</a>
 <%
     String strUid = "";
     if (null == session.getAttribute("uid")) {
