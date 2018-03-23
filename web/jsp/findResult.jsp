@@ -32,12 +32,16 @@
 
 </head>
 <script type="text/javascript">
-   window.ready(function(){
+   $(window).ready(function(){
        $('#byprice').show();
        $('#bytime').hide();
        $('#pricebutton').click(function () {
            $('#byprice').show();
            $('#bytime').hide();
+       })
+       $('#timebutton').click(function () {
+           $('#bytime').show();
+           $('#byprice').hide();
        })
    })
 </script>
@@ -46,8 +50,8 @@
     <div class="content">
         <div class="orderBy" id="orderBy">
             <ol>
-                <button id="pricebutton">按价格</button>
-                <button id="timebutton">按发布时间</button>
+                <ul id="pricebutton">按价格</ul>
+                <ul id="timebutton">按发布时间</ul>
             </ol>
         </div>
         <%		//定义四个分页会用到的变量
@@ -61,14 +65,15 @@
                 //接收到了pageNow
                 pageNow=Integer.parseInt(s_pageNow);
             }
+            GoodsOperations go = new GoodsOperations();
+            String value = request.getParameter("find_value");
+            List<Goods> goodsList;
+
             //查询得到rowCount
         %>
         <div class="container" id="bytime">
             <div class="content-top">
                 <%
-                    GoodsOperations go = new GoodsOperations();
-                    String value = request.getParameter("find_value");
-                    List<Goods> goodsList;
                     goodsList = go.getGoodsListByKeyValue(value,order);
                     rowCount = goodsList.size();
                     //计算pageCount
@@ -95,12 +100,13 @@
                 %>
                 <div class="col-md-3 col-md2">
                     <div class="col-md1 simpleCart_shelfItem">
-                        <a
-                                href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>"
-                                target="_blank"> <%
+                        <a href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>"
+                                target="_blank">
+                            <%
                             String photoPath = "images/" + goodsList.get(i).getGname()
                                     + "1.jpg";
-                        %> <img class="img-responsive" src=<%=photoPath%> alt="图片" />
+                            %>
+                            <img class="img-responsive" src=<%=photoPath%> alt="图片" />
                         </a>
                         <h3>
                             <a href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>" target="_blank"><%=goodsList.get(i).getGname()%></a>
@@ -125,7 +131,7 @@
                 }
             %>
         </div>
-
+    </div>
         <div class="container" id="byprice" >
             <%		//定义四个分页会用到的变量
                 pageSize=8;
@@ -133,14 +139,12 @@
                 rowCount=0;//该值从数据库中查询
                 pageCount=0;//该值是通过pageSize和rowCount
                 //接受用户希望显示的页数（pageNow）
-                s_pageNow=request.getParameter("pageNow");
+                /*s_pageNow=request.getParameter("pageNow");*/
                 if(s_pageNow!=null){
                     //接收到了pageNow
                     pageNow=Integer.parseInt(s_pageNow);
                 }
                 //查询得到rowCount
-                go = new GoodsOperations();
-                value = request.getParameter("find_value");
                 order=1;
                 goodsList = go.getGoodsListByKeyValue(value,order);
                 rowCount = goodsList.size();
@@ -211,7 +215,7 @@
 
     <%//上一页
         if(pageNow!=1){
-            out.println("<a href=index.jsp?pageNow="+(pageNow-1)+">上一页</a>");
+            out.println("<a href=findResult.jsp?pageNow="+(pageNow-1)+">上一页</a>");
         }else{
             out.println("上一页");
         }%>&nbsp
@@ -219,11 +223,11 @@
         for(int i=1;i<=pageCount;i++){
             if(i==pageNow)
                 out.println(i);
-            else out.println("<a href=index.jsp?pageNow="+i+">["+i+"]</a>");
+            else out.println("<a href=findResult.jsp?pageNow="+i+">["+i+"]</a>");
         }%>&nbsp
     <%//下一页
         if(pageNow!=pageCount){
-            out.println("<a href=index.jsp?pageNow="+(pageNow+1)+">下一页</a>");
+            out.println("<a href=findResult.jsp?pageNow="+(pageNow+1)+">下一页</a>");
         }else{
             out.println("下一页");
         }

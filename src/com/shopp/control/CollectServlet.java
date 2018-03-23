@@ -56,7 +56,7 @@ public class CollectServlet extends HttpServlet {
                 e.printStackTrace();
             }
             if (flag) {
-                response.sendRedirect("index.jsp?flag=success#gid");
+                response.sendRedirect("index.jsp?flag=success#target");
 
             } else {
                 response.sendRedirect("index.jsp?flag=fault");

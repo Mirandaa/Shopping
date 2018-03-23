@@ -109,8 +109,10 @@
         else{
           response.setContentType("textml");
           PrintWriter pw=response.getWriter();
-          if(request.getParameter("flag").equals("success"))
+          if(request.getParameter("flag").equals("success")) {
             pw.print("<script language='javascript'>alert('收藏成功');</script>");
+           // pw.print("<script language='javascript'>window.onload=function(){location.hash='#target';}</script>")
+          }
           else
             pw.print("<script language='javascript'>alert('收藏失败');</script>");
         }
@@ -133,6 +135,8 @@
       %>
       <div class="col-md-3 col-md2">
         <div class="col-md1 simpleCart_shelfItem">
+          <a href="#target"></a>
+          <a name="target"></a>
           <a
                   href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>"
                   target="_blank"> <%
@@ -142,6 +146,8 @@
           </a>
           <h3>
             <a href="jsp/goodsDescribed.jsp?gid=<%=goodsList.get(i).getGid()%>" target="_blank"><%=goodsList.get(i).getGname()%></a>
+
+
           </h3>
           <div class="price">
             <h5 class="item_price"><%=goodsList.get(i).getPrice()%>元
