@@ -23,7 +23,7 @@ public class EditUImgServlet extends HttpServlet {
         int uid= Integer.parseInt(uids);
         int i = 0;
         String[] attr = new String[11];
-        String path = "D:\\IdeaProjects\\Shopping\\web\\images\\";
+        String path = "G:\\个人\\IDEA_workspace\\Shopping\\web\\images\\";
         //1、创建一个DiskFileItemFactory工厂
         DiskFileItemFactory factory = new DiskFileItemFactory();
         //2、创建一个文件上传解析器
@@ -39,7 +39,6 @@ public class EditUImgServlet extends HttpServlet {
                     i++;
                 }
                 else {
-                    System.out.println("if_else");
                     String fileName = item.getName();
                     InputStream in = item.getInputStream();
                     byte[] buffer = new byte[1024];

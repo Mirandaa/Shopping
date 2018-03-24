@@ -88,7 +88,11 @@
                         allTotalNumber = allTotalNumber + number;
             %>
             <tr>
-                <td class="ring-in"><a
+                <td class="ring-in">
+                    <a href="#target">
+                    </a>
+                    <a name="target"></a>
+                    <a
                         href="jsp/goodsDescribed.jsp?gid=<%=goods.getGid()%>"
                         class="at-in"> <img src="<%=photoPath%>"
                                             class="img-responsive" alt="">

@@ -32,7 +32,7 @@ public class GoodsOperations {
             String gname = rs.getString("gname");
             int number = rs.getInt("number");
             String photo = rs.getString("gphoto");
-            String type = rs.getString("types");
+            String types = rs.getString("types");
             String producer = rs.getString("producer");
             float price = rs.getFloat("price");
             float carriage = rs.getFloat("carriage");
@@ -41,7 +41,7 @@ public class GoodsOperations {
             String described = rs.getString("described");
             int uid=rs.getInt("uid");
             String udate=rs.getString("udate");
-            goods = new Goods(gname, number, photo, type, producer, price,
+            goods = new Goods(gname, number, photo, types, producer, price,
                     carriage, pdate, paddress, described, uid,udate);
             goods.setGid(gid);
             goods.setUid(uid);
@@ -81,20 +81,19 @@ public class GoodsOperations {
      */
     public boolean editInfo(Goods goods) throws Exception {
         ps = null;
-        String sql = "update "+Tools.goods_table+" set gname=?,gphoto=?,types=?,producer=?,price=?,carriage=?,pdate=?,paddress=?,described=?,number=? where gid="
+        String sql = "update "+Tools.goods_table+" set gname=?,types=?,producer=?,price=?,carriage=?,pdate=?,paddress=?,described=?,number=? where gid="
                 + goods.getGid();
         int result = 0;
         ps = this.ct.prepareStatement(sql);
         ps.setString(1, goods.getGname());
-        ps.setString(2, goods.getPhoto());
-        ps.setString(3, goods.getType());
-        ps.setString(4, goods.getProducer());
-        ps.setFloat(5, goods.getPrice());
-        ps.setFloat(6, goods.getCarriage());
-        ps.setString(7, goods.getPdate());
-        ps.setString(8, goods.getPaddress());
-        ps.setString(9, goods.getDescribed());
-        ps.setInt(10, goods.getNumber());
+        ps.setString(2, goods.getType());
+        ps.setString(3, goods.getProducer());
+        ps.setFloat(4, goods.getPrice());
+        ps.setFloat(5, goods.getCarriage());
+        ps.setString(6, goods.getPdate());
+        ps.setString(7, goods.getPaddress());
+        ps.setString(8, goods.getDescribed());
+        ps.setInt(9, goods.getNumber());
         result = ps.executeUpdate();
         ps.close();
         if (result == 1) {
@@ -163,13 +162,13 @@ public class GoodsOperations {
     /*
      * 获取最新的4个商品
      */
-    public List<Goods> getLatestGoods(int gid, String type) throws Exception {
+    public List<Goods> getLatestGoods(int gid, String types) throws Exception {
         List<Goods> goodsList = new ArrayList<Goods>();
         Goods goods;
         String sql = "select gid,gname,price from "+Tools.goods_table+" where gid != ? and types=? order by gid desc limit 4";
         ps = this.ct.prepareStatement(sql);
         ps.setInt(1, gid);
-        ps.setString(2, type);
+        ps.setString(2, types);
         rs = ps.executeQuery();
         while (rs.next()) {
             goods = new Goods();
@@ -197,14 +196,14 @@ public class GoodsOperations {
         return types;
     }
     /*
-     * 得到相应type的商品列表
+     * 得到相应types的商品列表
      */
-    public List<Goods> getTypeGoodsList(String type) throws Exception {
+    public List<Goods> getTypeGoodsList(String types) throws Exception {
         List<Goods> goodsList = new ArrayList<Goods>();
         Goods goods;
         String sql = "select gid,gname from "+Tools.goods_table+" where types=? order by gid desc;";
         ps = this.ct.prepareStatement(sql);
-        ps.setString(1, type);
+        ps.setString(1, types);
         rs = ps.executeQuery();
         while (rs.next()) {
             goods = new Goods();
@@ -227,7 +226,7 @@ public class GoodsOperations {
             String gname = rs.getString("gname");
             int number = rs.getInt("number");
             String photo = rs.getString("gphoto");
-            String type = rs.getString("types");
+            String types = rs.getString("types");
             String producer = rs.getString("producer");
             float price = rs.getFloat("price");
             float carriage = rs.getFloat("carriage");
@@ -235,7 +234,7 @@ public class GoodsOperations {
             String paddress = rs.getString("paddress");
             String described = rs.getString("described");
             String udate=rs.getString("udate");
-            goods = new Goods(gname, number, photo, type, producer, price,
+            goods = new Goods(gname, number, photo, types, producer, price,
                     carriage, pdate, paddress, described,uid,udate);
             goods.setGid(gid);
             goods.setUid(uid);
@@ -243,7 +242,6 @@ public class GoodsOperations {
         }
         return glist;
     }
-
     /*
      * 根据gid返回用户联系方式
      */
@@ -276,7 +274,7 @@ public class GoodsOperations {
             String gname = rs.getString("gname");
             int number = rs.getInt("number");
             String photo = rs.getString("gphoto");
-            String type = rs.getString("types");
+            String types = rs.getString("types");
             String producer = rs.getString("producer");
             float price = rs.getFloat("price");
             float carriage = rs.getFloat("carriage");
@@ -285,7 +283,7 @@ public class GoodsOperations {
             String described = rs.getString("described");
             String udate=rs.getString("udate");
             int uid=rs.getInt("uid");
-            goods = new Goods(gname, number, photo, type, producer, price,
+            goods = new Goods(gname, number, photo, types, producer, price,
                     carriage, pdate, paddress, described,uid,udate);
             goods.setGid(gid);
             goods.setUid(uid);

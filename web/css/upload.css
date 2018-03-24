@@ -26,6 +26,56 @@
     left: 220px;
     color: #818181;
 }
+#EditForm {
+    height: 670px;
+    position: relative;
+    border: 1px solid #d7d7d7;
+    box-shadow: 0 0 10px #d7d7d7;
+    background-color: #fff;
+    position: absolute;
+    width: 550px;
+    top: 10px;
+    left: 220px;
+    color: #818181;
+}
+#EditForm ol {
+    padding-top: 20px;
+    padding-left: 93px;
+}
+#EditForm li {
+    line-height: 30px;
+}
+#EditForm li input {
+    width: 350px;
+    height: 33px;
+    line-height: 33px;
+    border: 1px solid #ccd1d5;
+    display: block;
+    border-radius: 5px;
+}
+#EditForm li textarea {
+    width: 350px;
+    height: 100px;
+    line-height: 20px;
+    border: 1px solid #ccd1d5;
+    display: block;
+    border-radius: 5px;
+    resize: none;
+}
+#EditForm input.btn-submit {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 88px;
+    height: 31px;
+    line-height: 31px;
+    cursor: pointer;
+    color: #fff;
+    top: 30px;
+    left: 230px;
+    border: 0;
+    background: url(../images/loginbutton.png) no-repeat 0 0;
+}
 #upload-main .cap h3 {
     position: absolute;
     top: 0;

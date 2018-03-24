@@ -95,6 +95,8 @@
                         class="at-in"> <img src="<%=photoPath%>"
                                             class="img-responsive" alt="">
                 </a>
+                    <a href="#edittarget"></a>
+                    <a name="edittarget"></a>
                     <div class="sed">
                         <h5>
                             商品名：<%=goods.getGname()%></h5>
@@ -110,6 +112,7 @@
                 <td><a
                         href="DeleteGServlet?gid=<%=gid%>&number=<%=number%>"
                         onclick="return confirmDelete()">删除</a></td>
+                <td><a href="jsp/editGoods.jsp?gid=<%=gid%>">修改</a></td>
             </tr>
             <%
                     }

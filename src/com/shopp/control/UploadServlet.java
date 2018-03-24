@@ -32,7 +32,7 @@ public class UploadServlet extends HttpServlet {
         int p = 0;
         int i = 0;
         String[] attr = new String[11];
-        String path = "D:\\IdeaProjects\\Shopping\\web\\images\\";
+        String path = "G:\\个人\\IDEA_workspace\\Shopping\\web\\images\\";
         int uid=0;
 
         //1、创建一个DiskFileItemFactory工厂
@@ -52,7 +52,6 @@ public class UploadServlet extends HttpServlet {
                     attr[i] = item.getString("utf-8");
                     i++;
                 }
-
                 else {
                     p++;
                     String fileName = item.getName();
@@ -88,7 +87,6 @@ public class UploadServlet extends HttpServlet {
                     }
                 }
             }
-            System.out.println("上传成功");
         }catch (Exception e){
             System.out.print("上传失败");
             e.printStackTrace();

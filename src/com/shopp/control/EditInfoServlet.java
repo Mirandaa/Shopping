@@ -1,14 +1,22 @@
 package com.shopp.control;
 
+import com.shopp.bean.Goods;
+import com.shopp.model.GoodsOperations;
 import com.shopp.model.UserOperations;
+import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 public class EditInfoServlet extends HttpServlet {
 
@@ -28,87 +36,54 @@ public class EditInfoServlet extends HttpServlet {
      * Destruction of the servlet. <br>
      */
     public void destroy() {
-        super.destroy(); // Just puts "destroy" string in log
-        // Put your code here
+        super.destroy();
     }
 
-    /**
-     * The doGet method of the servlet. <br>
-     *
-     * This method is called when a form has its tag value method equals to get.
-     *
-     * @param request
-     *            the request send by the client to the server
-     * @param response
-     *            the response send by the server to the client
-     * @throws ServletException
-     *             if an error occurred
-     * @throws IOException
-     *             if an error occurred
-     */
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         this.doPost(request, response);
     }
-    /**
-     * The doPost method of the servlet. <br>
-     *
-     * This method is called when a form has its tag value method equals to
-     * post.
-     *
-     * @param request
-     *            the request send by the client to the server
-     * @param response
-     *            the response send by the server to the client
-     * @throws ServletException
-     *             if an error occurred
-     * @throws IOException
-     *             if an error occurred
-     */
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
 
-        HttpSession session = request.getSession();
-
-        String uid = String.valueOf(session.getAttribute("uid"));
-
-        String uname = request.getParameter("username");
-        String passwd = request.getParameter("password");
-
-
-        try {
-            UserOperations uo = new UserOperations();
-            if (uo.editUname(Integer.parseInt(uid), uname)
-                    && uo.editPasswd(Integer.parseInt(uid), passwd)) {
-                request.getSession().setAttribute("uname", uname);
-                response.sendRedirect(request.getContextPath() + "/"
-                        + "index.jsp");
-                return;
+        request.setCharacterEncoding("utf-8");
+        response.setCharacterEncoding("utf-8");
+        String uids = String.valueOf( request.getSession().getAttribute("uid"));
+        int uid= Integer.parseInt(uids);
+        int i = 0;
+        int gid = Integer.parseInt(request.getParameter("gid"));
+        String gname = request.getParameter("gname");
+        int number = Integer.parseInt(request.getParameter("number"));
+        String types = request.getParameter("types");
+        String producer = request.getParameter("producer");
+        float price = Float.parseFloat(request.getParameter("price"));
+        float carriage = Float.parseFloat(request.getParameter("carriage"));
+        String paddress = request.getParameter("paddress");
+        String described = request.getParameter("described");
+        String gphoto = gname+"1.jpg&"+gname+"2.jpg&"+gname+"3.jpg";
+        Date date=new Date();
+        DateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String udate=format.format(date);
+        try{
+            Goods good = new Goods(gid, gname, number, gphoto, types,
+                    producer, price,  carriage, "2017-06-27",
+                    paddress,described, uid, udate);
+            GoodsOperations go = new GoodsOperations();
+            boolean flag = false;
+            try {
+                flag = go.editInfo(good);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            if (flag) {
+                System.out.print("success");
+                response.sendRedirect("jsp/showMessage.jsp");
+            } else {
+                System.out.print("success");
+                response.sendRedirect("jsp/howMessage.jsp");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        PrintWriter out = response.getWriter();
-        out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-        out.println("<HTML>");
-        out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-        out.println("  <BODY>");
-        out.println("修改个人信息失败,邮箱地址已使用");
-        out.println("  </BODY>");
-        out.println("</HTML>");
-        out.flush();
-        out.close();
     }
-
-    /**
-     * Initialization of the servlet. <br>
-     *
-     * @throws ServletException
-     *             if an error occurs
-     */
-    public void init() throws ServletException {
-        // Put your code here
-    }
-
 }

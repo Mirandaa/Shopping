@@ -36,9 +36,28 @@ public class Goods {
 
     }
 
+    @Override
+    public String toString() {
+        return "Goods{" +
+                "gid=" + gid +
+                ", gname='" + gname + '\'' +
+                ", number=" + number +
+                ", photo='" + photo + '\'' +
+                ", type='" + type + '\'' +
+                ", producer='" + producer + '\'' +
+                ", price=" + price +
+                ", carriage=" + carriage +
+                ", pdate='" + pdate + '\'' +
+                ", paddress='" + paddress + '\'' +
+                ", described='" + described + '\'' +
+                ", uid=" + uid +
+                ", udate='" + udate + '\'' +
+                '}';
+    }
+
     public Goods(String gname, int number, String photo, String type,
                  String producer, float price, float carriage, String pdate,
-                 String paddress, String described,int uid,String udate) {
+                 String paddress, String described, int uid, String udate) {
         this.gname = gname;
         this.number = number;
         this.photo = photo;
@@ -52,7 +71,24 @@ public class Goods {
         this.uid=uid;
         this.udate=udate;
     }
-
+    public Goods(int gid, String gname, int number, String photo, String type,
+                 String producer, float price, float carriage, String pdate,
+                 String paddress, String described, int uid, String udate) {
+        this.gid = gid;
+        this.gname = gname;
+        this.number = number;
+        this.photo = photo;
+        this.type = type;
+        this.producer = producer;
+        this.price = price;
+        this.carriage = carriage;
+        this.pdate = pdate;
+        this.paddress = paddress;
+        this.described = described;
+        this.uid=uid;
+        this.udate=udate;
+    }
+    /*不传photo进去*/
     public int getGid() {
         return gid;
     }
